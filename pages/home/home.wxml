@@ -9,20 +9,37 @@
     <text class = "hint-text">-向下滑动以发现更大的世界-</text>
   </view>
   <view class = "recommend-booklist-container">
-    <view class="recommend-booklist-box">
-      <text>艺术，音乐与文学鉴赏</text>
+    <view class = "recommend-booklist-box">
+      <text class = "recommend-booklist-title">艺术，音乐与文学鉴赏</text>
     </view>
     <view class="recommend-booklist-box">
-      <text>关于程序员的自我修养</text>
+      <text class = "recommend-booklist-title">关于程序员的自我修养</text>
     </view> 
     <view class="recommend-booklist-box">
-      <text>轻小说合集</text>
+      <text class = "recommend-booklist-title">轻小说合集</text>
     </view>
     <view class="recommend-booklist-box">
     </view>
   </view>
   <view class = "recommend-book-container">
     <view class = "recommend-book-box">
+      <view class = "recommend-book-display">
+        <view class = "recommend-book-info">
+          <text class = "recommend-book-title">哥伦比亚的倒影</text>
+          <text class = "recommend-book-description">人害怕寂寞，害怕到无耻的程度。换言之，人的某些无耻行径是由于害怕寂寞而做出来的。</text>
+        </view>
+        <view class = "recommend-book-cover">
+        </view>
+      </view>
+      <view class = "recommend-book-tab">
+        <view class = "recommend-book-author">
+          <image class = "author-avatar">
+          </image> 
+          <text class = "author-name">木心</text>
+        </view>
+        <view class = "recommend-book-button-panel">
+        </view>
+      </view>
     </view>
     <view class = "recommend-book-box">
     </view>
