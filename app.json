@@ -1,0 +1,37 @@
+{
+  "pages":[
+    "pages/home/home",
+    "pages/account/account",
+    "pages/search/search",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "-My PureBook-",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar":{
+    "color":"#888888",
+    "selectedColor":"#353535",
+    "backgroundColor":"#f5f5f5",
+    "list":[{
+      "iconPath":"",
+      "selectedIconPath":"",
+      "text":"Search",
+      "pagePath":"pages/search/search"
+    },{
+      "iconPath": "",
+      "selectedIconPath": "",
+      "text": "Homepage",
+      "pagePath": "pages/home/home"
+    },{
+      "iconPath": "",
+      "selectedIconPath": "",
+      "text": "MyLibrary",
+      "pagePath": "pages/account/account"
+    }]
+
+  }
+}

@@ -1,0 +1,56 @@
+.have-read-box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size:13pt;
+   
+}
+
+.have-read-calculator{
+  font-size: 50pt;
+}
+
+.have-read-calculator-box{
+  display: flex;
+  align-items: center;
+
+}
+
+.hint-text{
+  color: #888888;
+}
+
+
+.recommend-booklist-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top:20px;
+}
+
+.recommend-booklist-box{
+  background-color: #b3c3da;
+  border-radius: 5%;
+  box-shadow: 1px 1px 1px #888888;
+  width: 89px;
+  height: 84px;
+  
+}
+
+
+.recommend-book-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-top:20px;
+}
+
+.recommend-book-box{
+  width:390px;
+  height:300px;
+  background-color: #73807e;
+  border-radius:5%;
+  box-shadow: 2px 2px 2px #888888;
+  margin-bottom: 20px;
+}

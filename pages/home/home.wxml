@@ -1,0 +1,30 @@
+<!--home.wxml-->
+<view>
+  <view class = "have-read-box">
+    <text>您在PureBook已读过</text>
+    <view class = "have-read-calculator-box">
+      <text class = "have-read-calculator">0</text>
+      <text>本书</text>
+    </view>
+    <text class = "hint-text">-向下滑动以发现更大的世界-</text>
+  </view>
+  <view class = "recommend-booklist-container">
+    <view class="recommend-booklist-box">
+      <text>艺术，音乐与文学鉴赏</text>
+    </view>
+    <view class="recommend-booklist-box">
+      <text>关于程序员的自我修养</text>
+    </view> 
+    <view class="recommend-booklist-box">
+      <text>轻小说合集</text>
+    </view>
+    <view class="recommend-booklist-box">
+    </view>
+  </view>
+  <view class = "recommend-book-container">
+    <view class = "recommend-book-box">
+    </view>
+    <view class = "recommend-book-box">
+    </view>
+  </view>
+</view>
