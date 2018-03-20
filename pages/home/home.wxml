@@ -18,30 +18,47 @@
     <view class="recommend-booklist-box">
       <text class = "recommend-booklist-title">轻小说合集</text>
     </view>
-    <view class="recommend-booklist-box">
-    </view>
   </view>
   <view class = "recommend-book-container">
     <view class = "recommend-book-box">
       <view class = "recommend-book-display">
         <view class = "recommend-book-info">
           <text class = "recommend-book-title">哥伦比亚的倒影</text>
-          <text class = "recommend-book-description">人害怕寂寞，害怕到无耻的程度。换言之，人的某些无耻行径是由于害怕寂寞而做出来的。</text>
+          <text class = "recommend-book-description">“人害怕寂寞，害怕到无耻的程度。换言之，人的某些无耻行径是由于害怕寂寞而做出来的。”</text>
         </view>
-        <view class = "recommend-book-cover">
-        </view>
+        <image class = "recommend-book-cover" src = "../../images/book-cover-1.jpeg">
+        </image>
       </view>
       <view class = "recommend-book-tab">
         <view class = "recommend-book-author">
-          <image class = "author-avatar">
+          <image class = "author-avatar" src = "../../images/author-1.jpg">
           </image> 
-          <text class = "author-name">木心</text>
+          <text class = "author-name">木心 作品</text>
         </view>
         <view class = "recommend-book-button-panel">
         </view>
       </view>
     </view>
+    
     <view class = "recommend-book-box">
+      <view class = "recommend-book-display">
+        <view class = "recommend-book-info">
+          <text class = "recommend-book-title">哥伦比亚的倒影</text>
+          <text class = "recommend-book-description">“人害怕寂寞，害怕到无耻的程度。换言之，人的某些无耻行径是由于害怕寂寞而做出来的。”</text>
+        </view>
+        <image class = "recommend-book-cover" src = "../../images/book-cover-1.jpeg">
+        </image>
+      </view>
+      <view class = "recommend-book-tab">
+        <view class = "recommend-book-author">
+          <image class = "author-avatar" src = "../../images/author-1.jpg">
+          </image> 
+          <text class = "author-name">木心 作品</text>
+        </view>
+        <view class = "recommend-book-button-panel">
+        </view>
+      </view>
     </view>
+    
   </view>
 </view>
