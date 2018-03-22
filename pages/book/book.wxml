@@ -1,0 +1,18 @@
+<view>
+  <view class = "book-information-box">
+    <view class = "book-display-box">
+      <view class = "book-display">
+        <text class = "book-description">“人害怕寂寞，害怕到无耻的程度。换言之，人的某些无耻行径是由于害怕寂寞而做出来的。”</text>
+        <image class = "book-cover" src="../../images/book-cover-1.jpeg"/>
+      </view>
+      <text class = "book-title">哥伦比亚的倒影</text>
+    </view>
+    <view class = "author-display-box">
+      <image class = "author-avatar" src = "../../images/author-1.jpg"/>
+      <text class = "author-name">木心(1927-2011)</text>
+    </view>
+  </view>
+  
+
+
+</view>

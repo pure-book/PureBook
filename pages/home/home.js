@@ -15,6 +15,12 @@ Page({
     wx.navigateTo({
       url:"../book/book"
     })
+  },
+
+  jumpBooklist:function(){
+    wx.navigateTo({
+      url: '../booklist/booklist',
+    })
   }
 
 })

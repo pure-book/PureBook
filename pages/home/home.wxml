@@ -9,13 +9,13 @@
     <text class = "hint-text">-向下滑动以发现更大的世界-</text>
   </view>
   <view class = "recommend-booklist-container">
-    <view class = "recommend-booklist-box">
+    <view class = "recommend-booklist-box" bindtap='jumpBooklist'>
       <text class = "recommend-booklist-title">艺术，音乐与文学鉴赏</text>
     </view>
-    <view class="recommend-booklist-box">
+    <view class="recommend-booklist-box" bindtap='jumpBooklist'>
       <text class = "recommend-booklist-title">关于程序员的自我修养</text>
     </view> 
-    <view class="recommend-booklist-box">
+    <view class="recommend-booklist-box" bindtap='jumpBooklist'>
       <text class = "recommend-booklist-title">轻小说合集</text>
     </view>
   </view>
