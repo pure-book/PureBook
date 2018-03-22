@@ -4,7 +4,9 @@
     "pages/account/account",
     "pages/search/search",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/book/book",
+    "pages/author/author"
   ],
   "window":{
     "backgroundTextStyle":"light",
