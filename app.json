@@ -9,8 +9,7 @@
     "pages/author/author",
     "pages/booklist/booklist",
     "pages/bookExcerpt/bookExcerpt",
-    "pages/bookReview/bookReview",
-    "pages/bookIntroduction/bookIntroduction"
+    "pages/bookReview/bookReview"
 
   ],
   "window": {

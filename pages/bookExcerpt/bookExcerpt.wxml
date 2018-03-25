@@ -1,2 +1,4 @@
 <!--pages/bookExcerpt/bookExcerpt.wxml-->
+<import src = "../../components/tabbar/tabbar.wxml"/>
 <text>pages/bookExcerpt/bookExcerpt.wxml</text>
+<template is="tabbar" data="{{tabbar:bindData.tabbar}}"/>

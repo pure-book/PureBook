@@ -1,4 +1,4 @@
-<import src = "../../components/tabbar.wxml">
+<import src = "../../components/tabbar/tabbar.wxml"/>
 <view style='display:flex;flex-direction:column;align-items:center'>
   <view class = "book-information-box">
     <view class = "book-display-box">
@@ -28,7 +28,7 @@
     <view class = "book-tag">人文</view>
     <view class = "book-tag">散文</view>
   </view>
-  
+  <template is="tabbar" data="{{tabbar:bindData.tabbar}}"/>
 
 
 </view>
