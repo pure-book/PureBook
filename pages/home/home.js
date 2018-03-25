@@ -13,7 +13,7 @@ Page({
   
   jumpBook:function(){
     wx.navigateTo({
-      url:"../book/book"
+      url:"../book/book",
     })
   },
 

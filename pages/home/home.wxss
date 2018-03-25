@@ -81,6 +81,7 @@
 .recommend-book-title{
   font-size: 48rpx;
   color: #ffffff;
+  font-family: 'FZQingKeBenYueSongS-R-GB'
 }
 
 .recommend-book-description{

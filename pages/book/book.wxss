@@ -1,3 +1,10 @@
+.swiper-box{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+
+}
+
 .book-information-box{
   display: flex;
   flex-direction: column;
@@ -23,7 +30,9 @@
   writing-mode: vertical-rl;
   height:300rpx;
   margin-right:30rpx;
-  color: #b4b4b4
+  color: #b4b4b4;
+  font-family: 'FZQingKeBenYueSongS-R-GB';
+  font-weight: lighter;
 }
 
 .book-cover{
@@ -36,6 +45,7 @@
 .book-title{
   font-size:72rpx;
   margin-top:20rpx;
+  font-family: 'FZQingKeBenYueSongS-R-GB';
 
 }
 
@@ -55,6 +65,7 @@
 .author-name{
   font-size: 48rpx;
   margin-left:20rpx;
+  font-family: 'FZQingKeBenYueSongS-R-GB';
 }
 
 .button-box{
@@ -77,7 +88,6 @@
 
 .book-description{
   font-size:24rpx;
-
 }
 
 .book-tag-container{
@@ -106,3 +116,20 @@
   justify-content: center;
   align-items: center;
 }
+
+.swiper-tab{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.swiper-tab-list{
+  font-size:18rpx;
+}
+
+.on{
+  color:#888888;
+}
+
