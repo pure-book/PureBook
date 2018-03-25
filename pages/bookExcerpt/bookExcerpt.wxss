@@ -1,1 +1,57 @@
 /* pages/bookExcerpt/bookExcerpt.wxss */
+.book-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top:20rpx;
+  margin-left:40rpx;
+}
+
+.book-title{
+  font-size:72rpx;
+  font-family: 'FZQingKeBenYueSongS-R-GB';
+  color: #444444;
+}
+
+.author-button-container{
+  display: flex;
+  flex-direction: row;
+  margin-top:20rpx;
+}
+
+.author-info{
+  font-size:48rpx;
+  font-family: 'FZQingKeBenYueSongS-R-GB';
+  color: #444444;
+
+}
+
+.button-box{
+  font-size: 18rpx;
+  color: #7a7a7a;
+
+}
+
+.sentence{
+  font-size: 30rpx;
+  color:#7a7a7a;
+  text-align: center;
+  margin-top:20rpx;
+}
+
+.excerpt-container{
+  display: flex;
+  flex-direction: column;
+  margin-top:20rpx;
+}
+
+.excerpt-box{
+  background-color:#e9e9e9;
+  font-size: 30rpx;
+  font-family: 'FZQingKeBenYueSongS-R-GB';
+  width: 650rpx;
+  align-self: center;
+  color: #444444;
+  padding:10rpx;
+  margin-bottom:20rpx;
+}

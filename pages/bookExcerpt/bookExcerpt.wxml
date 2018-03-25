@@ -1,4 +1,22 @@
 <!--pages/bookExcerpt/bookExcerpt.wxml-->
 <import src = "../../components/tabbar/tabbar.wxml"/>
-<text>pages/bookExcerpt/bookExcerpt.wxml</text>
+<view>
+  <view class = "book-info">
+    <text class = "book-title">哥伦比亚的倒影</text>
+    <view class = "author-button-container">
+      <text class = "author-info">木心（1927-2011）</text>
+      <view class = "button-box"><text>未喜欢</text><text>未读</text></view>
+    </view>
+    <text class = "sentence">- 经典永远不会褪色 -</text>
+  </view>
+  <view class = "excerpt-container">
+    <view class = "excerpt-box">
+      <text class = "excerpt">“古老的国族，街头巷尾亭角桥堍，无不可见一闪一烁的人文剧情，名城宿迹，更是重重叠叠的往事尘梦，郁积得憋不过来了，幸亏总有春花秋月等闲度地在那里抚恤纾解，透一口气，透一口气，已是历史的喘息。”</text>
+    </view>
+    <view class = "excerpt-box">
+      <text class = "excerpt">“人害怕寂寞，害怕到无耻的程度。
+换言之，人的某些无耻行径是由于害怕寂寞而做出来的。”</text>
+    </view>    
+  </view>
+</view>
 <template is="tabbar" data="{{tabbar:bindData.tabbar}}"/>
