@@ -55,3 +55,16 @@
   padding:10rpx;
   margin-bottom:20rpx;
 }
+
+.add-excerpt-btn{
+  font-size:36rpx;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  align-items:center;
+  border-radius: 5%;
+  color: #666666;
+  width: 230rpx;
+  height: 70rpx;
+
+}

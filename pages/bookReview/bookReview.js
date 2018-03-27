@@ -64,5 +64,15 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+
+  addReview:function(){
+
+  },
+
+  jumpReview:function(){
+    wx.navigateTo({
+      url: '../reviewDetail/reviewDetail',
+    })
   }
 })

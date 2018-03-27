@@ -9,8 +9,8 @@
     "pages/author/author",
     "pages/booklist/booklist",
     "pages/bookExcerpt/bookExcerpt",
-    "pages/bookReview/bookReview"
-
+    "pages/bookReview/bookReview",
+    "pages/reviewDetail/reviewDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

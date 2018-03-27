@@ -18,5 +18,6 @@
 换言之，人的某些无耻行径是由于害怕寂寞而做出来的。”</text>
     </view>    
   </view>
+  <button class = "add-excerpt-btn" bindtap='addExcerpt'>添加摘录</button>
 </view>
 <template is="tabbar" data="{{tabbar:bindData.tabbar}}"/>

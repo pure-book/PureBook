@@ -1,1 +1,110 @@
 /* pages/bookReview/bookReview.wxss */
+.book-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top:20rpx;
+  margin-left:40rpx;
+}
+
+.book-title{
+  font-size:72rpx;
+  font-family: 'FZQingKeBenYueSongS-R-GB';
+  color: #444444;
+}
+
+.author-button-container{
+  display: flex;
+  flex-direction: row;
+  margin-top:20rpx;
+}
+
+.author-info{
+  font-size:48rpx;
+  font-family: 'FZQingKeBenYueSongS-R-GB';
+  color: #444444;
+
+}
+
+.button-box{
+  font-size: 18rpx;
+  color: #7a7a7a;
+
+}
+
+.sentence{
+  font-size: 30rpx;
+  color:#7a7a7a;
+  text-align: center;
+  margin-top:20rpx;
+}
+
+.review-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top:20rpx;
+}
+
+.review-box{
+  display: flex;
+  flex-direction: column;
+  padding:20rpx 50rpx 20rpx 50rpx;
+  margin-bottom: 5rpx;
+  border-top:0.5rpx solid #acacac;
+}
+
+.review-box-hover{
+  background-color: #e9e2e2;
+}
+
+.review-info{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.review-title{
+  font-size:30rpx;
+  font-family: 'FZQingKeBenYueSongS-R-GB';
+  color: #444444;
+}
+
+.review-user-info{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+}
+
+.review-user-avatar{
+  border-radius:50%;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.review-user-name{
+  font-size:22rpx;
+  color: #444444;
+
+}
+
+.review-content{
+  font-size:24rpx;
+  color: #444444;
+  margin-top:10rpx;
+}
+
+.add-review-btn{
+  font-size:36rpx;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  align-items:center;
+  border-radius: 5%;
+  color: #666666;
+  width: 230rpx;
+  height: 70rpx;
+}

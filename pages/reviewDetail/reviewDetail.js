@@ -1,5 +1,4 @@
-// pages/bookExcerpt/bookExcerpt.js
-var template = require('../../components/tabbar/tabbar.js');
+// pages/reviewDetail/reviewDetail.js
 Page({
 
   /**
@@ -13,7 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    template.tabbar("tabbar", 1, this)
+  
   },
 
   /**
@@ -63,9 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
   
-  },
-
-  addExcerpt:function(){
-    
   }
 })
