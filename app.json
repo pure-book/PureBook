@@ -10,7 +10,9 @@
     "pages/booklist/booklist",
     "pages/bookExcerpt/bookExcerpt",
     "pages/bookReview/bookReview",
-    "pages/reviewDetail/reviewDetail"
+    "pages/reviewDetail/reviewDetail",
+    "pages/like/like",
+    "pages/read/read"
   ],
   "window": {
     "backgroundTextStyle": "light",

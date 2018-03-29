@@ -1,0 +1,56 @@
+<view>
+  <view class='headbar'>
+    <view class='title'>我喜欢的书</view>
+    <view class='user_container'>
+      <image class='icon' src='/images/icon.png'></image>
+      <view class='username'>鲸鱼蜂蜜酱</view>
+    </view>
+  </view>
+  <view class='booklist'>
+    <view class='bookitem'>
+      <view class='container_3'>
+        <view class='num'>01</view>
+        <text class="fa fa-heart"></text>
+        <view class='bookinfo'>
+         <view class='bookname'>《荒原狼》</view>
+         <view class='bookauthor'>赫尔曼·黑塞</view>
+        </view>
+      </view>
+      <text class="fa fa-ellipsis-h"></text>
+    </view>
+    <view class='bookitem'>
+      <view class='container_3'>
+        <view class='num'>02</view>
+        <text class="fa fa-heart"></text>
+        <view class='bookinfo'>
+         <view class='bookname'>《看不见的城市》</view>
+         <view class='bookauthor'>卡尔维诺</view>
+        </view>
+      </view>
+      <text class="fa fa-ellipsis-h"></text>
+    </view>
+    <view class='bookitem'>
+      <view class='container_3'>
+        <view class='num'>03</view>
+        <text class="fa fa-heart"></text>
+        <view class='bookinfo'>
+         <view class='bookname'>《西西弗斯神话》</view>
+         <view class='bookauthor'>加缪</view>
+        </view>
+      </view>
+      <text class="fa fa-ellipsis-h"></text>
+    </view>
+    <view class='bookitem'>
+      <view class='container_3'>
+        <view class='num'>04</view>
+        <text class="fa fa-heart"></text>
+        <view class='bookinfo'>
+         <view class='bookname'>《局外人》</view>
+         <view class='bookauthor'>加缪</view>
+        </view>
+      </view>
+      <text class="fa fa-ellipsis-h"></text>
+    </view>
+    
+  </view>
+</view>

@@ -1,5 +1,28 @@
 <!--account.wxml-->
-<view>
-  <view>
+<view class='bg'>
+  <view class = "user_portfolio">
+    <image class='user_icon' src='/images/icon.png'></image>
+    <text class='username'>鲸鱼蜂蜜酱</text>
+    <text class='user_signature'>我在你看不见的宇宙，或前或后任何星球</text>
+  </view>
+  <view class='func_container'>
+    <view bindtap='gotolike' class='bar'>
+      <i class='fa fa-heart'></i>我喜欢的书
+    </view>
+    <view bindtap='gotoread' class='bar'>
+      <i class='fa fa-bookmark'></i>我已读的书
+    </view>
+    <view class='bar'>
+      <i class='fa fa-book'></i>我的书评
+    </view>
+    <view class='bar'>
+      <i class='fa fa-gear'></i>设置
+    </view>
+  <!--
+    <view class='block'>喜欢</view>
+    <view class='block'>已读</view>
+    <view class='block'>书评</view>
+    <view class='block'>设置</view>
+  -->
   </view>
 </view>
