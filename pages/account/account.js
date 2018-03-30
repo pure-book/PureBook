@@ -6,9 +6,19 @@ Page({
       url: '../like/like',
     })
   },
-  gotoread: function () {
+  gotomyBooklist: function () {
     wx.navigateTo({
-      url: '../read/read',
+      url: '../myBooklist/myBooklist',
+    })
+  },
+  gotomyReview: function () {
+    wx.navigateTo({
+      url: '../myReview/myReview',
+    })
+  },
+  gotomysetting: function () {
+    wx.navigateTo({
+      url: '../setting/setting',
     })
   }
 })

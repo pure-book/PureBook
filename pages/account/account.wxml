@@ -9,13 +9,13 @@
     <view bindtap='gotolike' class='bar'>
       <i class='fa fa-heart'></i>我喜欢的书
     </view>
-    <view bindtap='gotoread' class='bar'>
-      <i class='fa fa-bookmark'></i>我已读的书
+    <view bindtap='gotomyBooklist' class='bar'>
+      <i class='fa fa-bookmark'></i>我的书单
     </view>
-    <view class='bar'>
+    <view bindtap='gotomyReview' class='bar'>
       <i class='fa fa-book'></i>我的书评
     </view>
-    <view class='bar'>
+    <view bindtap='gotosetting' class='bar'>
       <i class='fa fa-gear'></i>设置
     </view>
   <!--

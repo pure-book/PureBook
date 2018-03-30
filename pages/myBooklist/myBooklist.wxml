@@ -1,0 +1,33 @@
+<!--pages/read/read.wxml-->
+<view>
+  <view class='headbar'>
+    <view class='title'>我的书单</view>
+    <view class='user_container'>
+      <image class='icon' src='/images/icon.png'></image>
+      <view class='username'>鲸鱼蜂蜜酱</view>
+    </view>
+  </view>
+  <view class='booklist'>
+    <view class='listitem'>
+      <view class='listicon'></view>
+      <view class='container_2'>
+        <view class='listname'>文学、音乐与艺术</view>
+        <view class='listinfo'>10本书·被收藏10次</view>
+      </view>
+    </view>
+    <view class='listitem'>
+      <view class='listicon'></view>
+      <view class='container_2'>
+        <view class='listname'>我是即将到来的日子</view>
+        <view class='listinfo'>23本书·被收藏12次</view>
+      </view>
+    </view>
+    <view class='listitem'>
+      <view class='listicon'></view>
+      <view class='container_2'>
+        <view class='listname'>阿尔贝·加缪经典</view>
+        <view class='listinfo'>7本书·被收藏5次</view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -30,11 +30,10 @@
 }
 
 .booklist{
-
+  padding-top: 5rpx;
 }
 
-.bookitem{
-  width: 100%;
+.listitem{
   height: 150rpx;
   border-bottom: 2rpx solid #f1f1f1;
   padding: 0 50rpx;
@@ -42,38 +41,31 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  
 }
 
-.container_3{
+.listinfo{
+  font-size: 30rpx;
+  color: gray;
+}
+
+.time{
+  color: #404040;
+}
+.year{
+  font-size: 24rpx;
+  line-height: 80%;
+}
+.month{
+  font-size: 40rpx;
+}
+.day{
+  font-size: 28rpx;
+  line-height: 180%;
+  padding-left: 5rpx;
+}
+.date{
   display: flex;
   flex-direction: row;
-  align-items: center;
-}
-
-.num{
-  width: 50rpx;
-  font-size: 40rpx;
-  margin-right: 20rpx;
-}
-
-.fa-heart{
-  font-size: 40rpx;
-}
-
-.bookname{
+  align-items: flex-start;
   
-}
-
-.bookinfo{
-  margin-left: 20rpx;
-}
-
-.bookauthor{
-  margin-left: 20rpx;
-  font-size: 32rpx;
-}
-
-.fa-ellipsis-h{
-  margin-right: 100rpx;
 }

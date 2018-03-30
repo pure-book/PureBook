@@ -1,5 +1,6 @@
 {
   "pages": [
+    
     "pages/home/home",
     "pages/account/account",
     "pages/search/search",
@@ -11,12 +12,15 @@
     "pages/bookExcerpt/bookExcerpt",
     "pages/bookReview/bookReview",
     "pages/reviewDetail/reviewDetail",
+    "pages/myBooklist/myBooklist",
     "pages/like/like",
-    "pages/read/read"
+    "pages/myReview/myReview",
+    "pages/setting/setting"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#f5f5f5",
     "navigationBarTitleText": "-My PureBook-",
     "navigationBarTextStyle": "black"
   },
