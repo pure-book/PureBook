@@ -3,8 +3,8 @@
   <view class='headbar'>
     <view class='title'>我的书单</view>
     <view class='user_container'>
-      <image class='icon' src='/images/icon.png'></image>
-      <view class='username'>鲸鱼蜂蜜酱</view>
+      <image class='icon' src='{{userInfo.avatarUrl}}'></image>
+      <view class='username'>{{userInfo.nickName}}</view>
     </view>
   </view>
   <view class='booklist'>

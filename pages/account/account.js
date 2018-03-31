@@ -1,6 +1,25 @@
 const app = getApp()
+var http = require('../../utils/httpUtil.js')
+var api = ""
+var params={
+
+}
 
 Page({
+  data:{
+    userInfo:{}
+  },
+
+  onLoad:function(){
+    var that = this
+    app.getUserInfo(function(userInfo){
+      that.setData({
+        userInfo:userInfo
+      })
+    })
+
+  },
+
   gotolike: function () {
     wx.navigateTo({
       url: '../like/like',

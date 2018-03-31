@@ -1,8 +1,8 @@
 <!--account.wxml-->
 <view class='bg'>
   <view class = "user_portfolio">
-    <image class='user_icon' src='/images/icon.png'></image>
-    <text class='username'>鲸鱼蜂蜜酱</text>
+    <image class='user_icon' src='{{userInfo.avatarUrl}}'></image>
+    <text class='username'>{{userInfo.nickName}}</text>
     <text class='user_signature'>我在你看不见的宇宙，或前或后任何星球</text>
   </view>
   <view class='func_container'>
