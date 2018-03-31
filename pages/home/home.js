@@ -1,6 +1,36 @@
 const app = getApp()
+var http = require('../../utils/httpUtil.js')
+var api = ""
+var params = {
+
+}
+
 
 Page({
+  data:{
+    recommendBookArray:[{
+      recommendBookTitle:"哥伦比亚的倒影",
+      recommendBookDescription: "人害怕寂寞，害怕到无耻的程度。换言之，人的某些无耻行径是由于害怕寂寞而做出来的。",
+      recommendBookCover: "../../images/book-cover-1.jpeg",
+      recommendBookAuthorAvatar:"../../images/author-1.jpg",
+      recommendBookAuthorName:"木心 作品"
+    },{
+      recommendBookTitle:"哥伦比亚的倒影",
+      recommendBookDescription: "人害怕寂寞，害怕到无耻的程度。换言之，人的某些无耻行径是由于害怕寂寞而做出来的。",
+      recommendBookCover: "../../images/book-cover-1.jpeg",
+      recommendBookAuthorAvatar:"../../images/author-1.jpg",
+      recommendBookAuthorName:"木心 作品"
+    }],
+    recommendBooklistArray:[{
+      recommendBooklistTitle:"艺术，音乐与文学鉴赏"
+    },{
+      recommendBooklistTitle: "关于程序员的自我修养"
+    },{
+      recommendBooklistTitle: "轻小说合集"
+    }],
+    haveRead:0
+  },
+  
   onLoad:function(){
     
   },
