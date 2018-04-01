@@ -5,14 +5,18 @@ Page({
   data: {
     userInfo: {},
     likeBookArray:[{
-      bookName:"111",
-      bookAuthor:"111"
+      bookName:"default",
+      bookAuthor:"default",
+      bookId:0
     }]
+
   },
 
-  jumpBook: function () {
+  jumpBook: function (e) {
+    var index = e.target.dataset.index;
+    console.log(index)
     wx.navigateTo({
-      url: '../book/book',
+      url: '../book/book?id='+this.data.likeBookArray[index].bookId,
     })
   },
 
@@ -33,9 +37,11 @@ Page({
       for(var i =0;i<res.data.data.length;i++){
         var param1 = "likeBookArray[" + i + "].bookName"
         var param2 = "likeBookArray[" + i + "].bookAuthor"
+        var param3 = "likeBookArray[" + i + "].bookId"
         that.setData({
           [param1]:res.data.data[i].name,
-          [param2]:res.data.data[i].author
+          [param2]:res.data.data[i].author,
+          [param3]:res.data.data[i].id
         })
       }
 

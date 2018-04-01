@@ -7,7 +7,7 @@
     </view>
   </view>
   <view class='booklist'>
-    <view class='bookitem' wx:for="{{likeBookArray}}" bindtap='jumpBook'>
+    <view class='bookitem' wx:for="{{likeBookArray}}" data-index="{{index}}" bindtap='jumpBook'>
       <view class='container_3'>
         <view class='num'>{{index+1}}</view>
         <text class="fa fa-heart"></text>

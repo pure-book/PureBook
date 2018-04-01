@@ -24,14 +24,13 @@ Page({
     
   },
 
-  onLoad:function(){
+  onLoad:function(options){
     template.tabbar("tabbar", 0, this)
-    var api = ""
+    var api = "/books/"+options.id
     var params = {
-
     }
     http.GET(api, params, function (res) {
-
+      console.log(res)
     })
   },
 
