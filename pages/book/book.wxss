@@ -38,7 +38,7 @@
 .book-cover{
   width: 192rpx;
   height:277rpx;
-  box-shadow: 5rpx 5rpx 5rpx #888888;
+  box-shadow: 15rpx 15rpx 30rpx #aaaaaa;
 
 }
 
@@ -73,8 +73,10 @@
   flex-direction: row;
   align-items: center;
   margin-top:20rpx;
-  
+}
 
+.fa-heart-o, .fa-heart{
+  font-size: 50rpx;
 }
 
 .book-description-box{
@@ -82,8 +84,6 @@
   margin-top:20rpx;
   width: 630rpx;
   height:370rpx;
-  
-
 }
 
 .book-description{

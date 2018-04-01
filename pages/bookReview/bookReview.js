@@ -91,7 +91,9 @@ Page({
   },
 
   addReview:function(){
-
+    wx.navigateTo({
+      url: '../addReview/addReview',
+    })
   },
 
   jumpReview:function(){

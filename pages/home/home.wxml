@@ -12,7 +12,6 @@
     <view class = "recommend-booklist-box" bindtap='jumpBooklist' wx:for="{{recommendBooklistArray}}">
       <text class = "recommend-booklist-title">{{item.recommendBooklistTitle}}</text>
     </view>
-
   </view>
   <view class = "recommend-book-container">
     <view class = "recommend-book-box" wx:for="{{recommendBookArray}}">
@@ -30,8 +29,7 @@
           </image> 
           <text class = "author-name">{{item.recommendBookAuthorName}}</text>
         </view>
-        <view class = "recommend-book-button-panel">
-        </view>
+        <text class="{{item.likeStatus?'fa fa-heart':'fa fa-heart-o'}}" data-index="{{index}}" bindtap="{{item.likeStatus?'setunlike':'setlike'}}" ></text>
       </view>
     </view>
 

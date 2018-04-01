@@ -1,0 +1,56 @@
+/* pages/addExcerpt/addExcerpt.wxss */
+.book-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top:20rpx;
+}
+
+.book-title{
+  font-size:72rpx;
+  font-family: 'FZQingKeBenYueSongS-R-GB';
+  color: #444444;
+  margin-left:40rpx;
+}
+
+.author-button-container{
+  display: flex;
+  flex-direction: row;
+  margin-top:20rpx;
+  font-size:48rpx;
+  font-family: 'FZQingKeBenYueSongS-R-GB';
+  color: #444444;
+}
+
+.submit{
+  position: absolute;
+  right: 20rpx;
+}
+
+.author-info{
+  margin-left:40rpx;
+}
+
+.sentence{
+  font-size: 30rpx;
+  color:#7a7a7a;
+  text-align: center;
+  padding:20rpx 0;
+  border-bottom: 2rpx solid gainsboro;
+}
+
+.addTitle{
+  margin: 20rpx 0 20rpx 40rpx;
+  font-size: 56rpx;
+  font-family: 'FZQingKeBenYueSongS-R-GB';
+}
+
+.title{
+  font-family: 'FZQingKeBenYueSongS-R-GB';
+  color: #555555;
+}
+
+.addContent{
+  margin-left: 40rpx;
+  font-size: 34rpx;
+}

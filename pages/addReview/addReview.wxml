@@ -1,0 +1,19 @@
+<!--pages/addReview/addReview.wxml-->
+<import src = "../../components/tabbar/tabbar.wxml"/>
+<view>
+  <view class = "book-info">
+    <text class = "book-title">{{bookInfo.bookName}}</text>
+    <view class = "author-button-container">
+      <text class = "author-info">{{bookInfo.bookAuthor}}</text>
+      <text class = "submit" bindtap='submitReview'>·提交·</text>
+    </view>
+    <text class = "sentence">- 添加书评 -</text>
+  </view>
+  <view class='addTitle'>
+    <input placeholder='添加标题' placeholder-class='title' bindinput='titleInput' auto-focus></input>
+  </view>
+  <view class='addContent'>
+    <input placeholder='添加正文' placeholder-class='content' bindinput='contentInput'></input>
+  </view>
+</view>
+

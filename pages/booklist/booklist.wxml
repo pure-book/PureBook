@@ -1,8 +1,24 @@
 <view>
-  <view>
+  <view class='headbar'>
+    <view class='title'>{{booklistName}}</view>
+    <view class='user_container'>
+      <image class='icon' src='{{userInfo.avatarUrl}}'></image>
+      <view class='username'>{{userInfo.nickName}}</view>
+    </view>
   </view>
+  <view class='booklist'>
+    <view class='bookitem' wx:for="{{likeBookArray}}" bindtap='jumpBook'>
+      <view class='container_3'>
+        <view class='num'>{{index+1}}</view>
+        <text class="fa fa-heart"></text>
+        <view class='bookinfo'>
+         <view class='bookname'>{{item.bookName}}</view>
+         <view class='bookauthor'>{{item.bookAuthor}}</view>
+        </view>
+      </view>
+      <text class="fa fa-ellipsis-h"></text>
+    </view>
 
-
-
-
+    
+  </view>
 </view>

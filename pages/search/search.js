@@ -8,7 +8,28 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    BookArray: [{
+      BookTitle: "哥伦比亚的倒影",
+      BookCover: "../../images/book-cover-1.jpeg"
+    }, {
+      BookTitle: "哥伦比亚的倒影",
+      BookCover: "../../images/book-cover-1.jpeg"
+      }, {
+        BookTitle: "哥伦比亚的倒影",
+        BookCover: "../../images/book-cover-1.jpeg"
+      }
+    ],
+    AuthorArray: [{
+      AuthorName:"木心",
+      AuthorImage:"../../images/author-1.jpg"
+    }, {
+      AuthorName: "木心",
+      AuthorImage: "../../images/author-1.jpg"
+    },{
+      AuthorName:"木心",
+      AuthorImage:"../../images/author-1.jpg"
+    }
+    ]
   },
 
   /**

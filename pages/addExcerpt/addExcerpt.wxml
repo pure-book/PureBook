@@ -1,0 +1,16 @@
+<!--pages/addExcerpt/addExcerpt.wxml-->
+<import src = "../../components/tabbar/tabbar.wxml"/>
+<view>
+  <view class = "book-info">
+    <text class = "book-title">{{bookInfo.bookName}}</text>
+    <view class = "author-button-container">
+      <text class = "author-info">{{bookInfo.bookAuthor}}</text>
+      <text class = "submit" bindtap='submitExcerpt'>·提交·</text>
+    </view>
+    <text class = "sentence">- 添加摘录 -</text>
+  </view>
+  <view class='addTitle'>
+    <input placeholder='写下你喜欢的句子' placeholder-class='title' auto-focus></input>
+  </view>
+</view>
+

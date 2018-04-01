@@ -1,2 +1,19 @@
 <!--pages/search/search.wxml-->
-<text>pages/search/search.wxml</text>
+<view class='search'>
+  <input placeholder='输入你感兴趣的书籍、作者' auto-focus></input>
+</view>
+<view class='title'>/ 热门书籍/</view>
+  <view class='book'>
+    <view class='item' wx:for = "{{BookArray}}">
+      <image class='book_cover' src = "{{item.BookCover}}"></image>
+      <text class='book_title'>{{item.BookTitle}}</text>
+    </view>
+  </view>
+
+<view class='title'>/ 热门作者 /</view>
+<view class='author'>
+  <view class='item' wx:for = "{{AuthorArray}}">
+    <image class='author_img' src = "{{item.AuthorImage}}"></image>
+    <text class='author_name'>{{item.AuthorName}}</text>
+  </view>
+</view>
