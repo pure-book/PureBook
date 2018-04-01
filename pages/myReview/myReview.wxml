@@ -7,16 +7,16 @@
     </view>
   </view>
    <view class='booklist'>
-    <view bindtap='gotoreview' class='listitem' wx:for="{{reviewArray}}">
+    <view bindtap='gotoreview' class='listitem' wx:for="{{reviewArray}}" data-index="{{index}}">
       <view class='container_2'>
         <view class='listname'>{{item.reviewTitle}}</view>
         <view class='listinfo'>评《{{item.reviewBook}}》</view>
       </view>
       <view class='time'>
-        <view class='year'>{{item.reviewDate.year}}</view>
+        <view class='year'>{{item.reviewYear}}</view>
         <view class='date'>
-          <text class='month'>{{item.reviewDate.month}}</text>
-          <text class='day'>{{item.reviewDate.day}}</text>
+          <text class='month'>{{item.reviewMonth}}</text>
+          <text class='day'>{{item.reviewDay}}</text>
         </view>
       </view>
     </view>

@@ -5,8 +5,8 @@ Page({
   data:{
 
   },
-  onLoad:function(){
-    var api = ""
+  onLoad:function(options){
+    var api = ""+options.id
     var params = {
 
     }

@@ -5,18 +5,12 @@ Page({
   data: {
     userInfo: {},
     booklistArray:[{
-      booklistName:"文学，音乐与艺术",
-      bookCount:10,
-      starCount:10
-    }, {
-      booklistName: "我是即将来到的日子",
-      bookCount: 23,
-      starCount: 12
-      }, {
-      booklistName: "阿尔贝加缪经典",
-      bookCount: 7,
-      starCount: 5
-      }]
+      booklistName:"",
+      bookCount:0,
+      starCount:0,
+      booklistId:0,
+      authorId:""
+    }]
   },
 
   onLoad: function () {
@@ -27,10 +21,20 @@ Page({
       })
     })
 
-    var api = "/users/" + app.globalData.userId + "/collection"
+    var api = "/users/" + app.globalData.userId + "/booklist"
     var params = {}
     http.GET(api, params, function (res) {
-      console.log(res.data)
+      console.log(res.data.data)
+      for (var i = 0; i < res.data.data.length; i++) {
+        var param1 = "booklistArray[" + i + "].booklistName"
+        var param2 = "booklistArray[" + i + "].bookCount"
+        var param3 = "booklistArray[" + i + "].starCount"
+        var param4 = "booklistArray[" + i + "].authorId"
+        that.setData({
+          [param1]: res.data.data[i].name,
+          [param4]:res.data.data[i].userId
+        })
+      }
     })
 
 
@@ -38,9 +42,10 @@ Page({
 
   },
 
-  jumpBooklist:function(){
+  jumpBooklist:function(e){
+    var index = e.target.dataset.index
     wx.navigateTo({
-      url: '../booklist/booklist',
+      url: '../booklist/booklist?id='+this.data.booklistArray[index].booklistId,
     })
   }
 
