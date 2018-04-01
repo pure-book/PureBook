@@ -5,15 +5,9 @@ Page({
   data: {
     userInfo: {},
     likeBookArray:[{
-      bookName:"《荒原狼》",
-      bookAuthor:"赫尔曼·黑塞"
-    },{
-      bookName:"《看不见的城市》",
-      bookAuthor:"卡尔维诺"
-    }, {
-      bookName: "《西西福斯神话》",
-      bookAuthor: "加缪"
-      }]
+      bookName:"111",
+      bookAuthor:"111"
+    }]
   },
 
   jumpBook: function () {
@@ -33,7 +27,18 @@ Page({
     var api = "/users/"+app.globalData.userId + "/collection"
     var params={}
     http.GET(api,params,function(res){
-      console.log(res)
+      console.log(res.data.data)
+      
+      
+      for(var i =0;i<res.data.data.length;i++){
+        var param1 = "likeBookArray[" + i + "].bookName"
+        var param2 = "likeBookArray[" + i + "].bookAuthor"
+        that.setData({
+          [param1]:res.data.data[i].name,
+          [param2]:res.data.data[i].author
+        })
+      }
+
     })
 
   },
