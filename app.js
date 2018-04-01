@@ -1,11 +1,13 @@
 //app.js
 App({
   onLaunch: function () {
+    var that = this;
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
+    var id = ""
+    
     // 登录
     wx.login({
       success: function(r){
@@ -13,42 +15,37 @@ App({
         if(code){
           wx.getUserInfo({
             success:function(res){
-              console.log({
-                encryptedData: res.encryptedData,
-                iv: res.iv,
-                code: code
-              }),
               wx.request({
-                url: '/login',
-                method:'post',
-                header:{
-                  
-                },
+                url: 'http://10.20.171.225:4000/v1/login/decodeUserInfo',
+                method:"POST",
                 data:{
                   encryptedData:res.encryptedData,
                   iv:res.iv,
-                  code:code
+                  code:code,
+                  userName: res.userInfo.nickName
                 },
                 //判断是否解密成功
                 success:function(data){
                   if(data.data.status==1){
                     var userInfo_ = data.data.userInfo
-                    console.log(userInfo_)
+                    id = userInfo_.openId
+                    that.globalData.userId = id
                   }else{
                     console.log("解密失败")
                   }
+                  
                 },
                 fail:function(){
                   console.log("系统错误")
                 }
               })
             },
-            fail:function(){
-              console.log("获取用户信息失败")
+            fail:function(res){
+              console.log("获取用户信息失败"+res.errMsg)
             }
           })
         }else{
-          console.log("获取用户登录状态失败"+res.errMsg)
+          console.log("获取用户登录状态失败"+r.errMsg)
         }
         
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
@@ -66,7 +63,7 @@ App({
           wx.getUserInfo({
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
-              this.globalData.userInfo = res.userInfo
+              that.globalData.userInfo = res.userInfo
 
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
@@ -100,7 +97,9 @@ App({
     }
   },
 
+
   globalData: {
-    userInfo: null
+    userInfo: null,
+    userId:""
   }
 })

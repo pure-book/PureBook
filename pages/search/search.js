@@ -1,4 +1,7 @@
 // pages/search/search.js
+const app = getApp()
+var http = require('../../utils/httpUtil.js')
+
 Page({
 
   /**
@@ -12,7 +15,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var api = ""
+    var params = {
+
+    }
+    http.GET(api, params, function (res) {
+
+    })
+
   },
 
   /**

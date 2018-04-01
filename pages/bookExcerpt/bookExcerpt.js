@@ -1,5 +1,7 @@
 // pages/bookExcerpt/bookExcerpt.js
 var template = require('../../components/tabbar/tabbar.js');
+var http = require('../../utils/httpUtil.js')
+
 Page({
 
   /**
@@ -23,6 +25,13 @@ Page({
    */
   onLoad: function (options) {
     template.tabbar("tabbar", 1, this)
+    var api = ""
+    var params = {
+
+    }
+    http.GET(api, params, function (res) {
+
+    })
   },
 
   /**
@@ -50,6 +59,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
+    
   
   },
 

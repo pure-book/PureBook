@@ -1,5 +1,7 @@
 // pages/bookReview/bookReview.js
-var template = require('../../components/tabbar/tabbar.js');
+var template = require('../../components/tabbar/tabbar.js')
+var http = require('../../utils/httpUtil.js')
+
 Page({
 
   /**
@@ -29,6 +31,13 @@ Page({
    */
   onLoad: function (options) {
     template.tabbar("tabbar", 2, this)
+    var api = ""
+    var params = {
+
+    }
+    http.GET(api, params, function (res) {
+
+    })
   
   },
 

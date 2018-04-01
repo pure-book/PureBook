@@ -1,4 +1,5 @@
 const app = getApp()
+var http = require('../../utils/httpUtil.js')
 
 Page({
   data: {
@@ -36,6 +37,12 @@ Page({
       that.setData({
         userInfo: userInfo
       })
+    })
+    
+    var api = "users/" + app.globalData.userId + "/collection"
+    var params = {}
+    http.GET(api, params, function (res) {
+      console.log(res.data)
     })
   },
   

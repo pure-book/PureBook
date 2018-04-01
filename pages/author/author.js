@@ -23,6 +23,13 @@ Page({
   },
 
   onLoad:function(){
+    var api = ""
+    var params = {
+
+    }
+    http.GET(api, params, function (res) {
+
+    })
 
   },
 

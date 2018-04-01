@@ -1,5 +1,7 @@
 const app = getApp()
 var template = require('../../components/tabbar/tabbar.js');
+var http = require('../../utils/httpUtil.js')
+
 Page({
   data:{
     bookInfo:{
@@ -24,6 +26,13 @@ Page({
 
   onLoad:function(){
     template.tabbar("tabbar", 0, this)
+    var api = ""
+    var params = {
+
+    }
+    http.GET(api, params, function (res) {
+
+    })
   },
 
   
