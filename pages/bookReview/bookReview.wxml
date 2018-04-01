@@ -2,44 +2,29 @@
 <import src = "../../components/tabbar/tabbar.wxml"/>
 <view>
   <view class = "book-info">
-    <text class = "book-title">哥伦比亚的倒影</text>
+    <text class = "book-title">{{bookInfo.bookTitle}}</text>
     <view class = "author-button-container">
-      <text class = "author-info">木心（1927-2011）</text>
+      <text class = "author-info">{{bookInfo.bookAuthor}}</text>
       <view class = "button-box"><text>未喜欢</text><text>未读</text></view>
     </view>
     <text class = "sentence">- 分享你的想法 -</text>
   </view>
   
   <view class = "review-container">
-    <view class = "review-box" bindtap="jumpReview" hover = 'true' hover-class='review-box-hover'>
+    <view class = "review-box" bindtap="jumpReview" hover = 'true' hover-class='review-box-hover' wx:for="{{bookReviewArray}}">
       <view class = "review-info">
-        <text class = "review-title">顾影的木心</text>
+        <text class = "review-title">{{item.bookReviewTitle}}</text>
         <view class = "review-user-info">
-          <image class = "review-user-avatar" src='../../images/author-1.jpg'/>
-          <text class = "review-user-name">潇湘夜雨</text>
+          <image class = "review-user-avatar" src='{{item.bookReviewUserAvatar}}'/>
+          <text class = "review-user-name">{{item.bookReviewUserName}}</text>
         </view>
       </view>
-
       <view class = "review-content">
-        记者采访木心，谈及木心名字由来，乃孔子弟子称颂老师的话“夫子木铎有心”。限于识见，我未找到此语的出处，倒是论语中有“天将以夫子为木铎”之语。
+        {{item.bookReviewContent}}
       </view>
 
     </view>
 
-    <view class = "review-box" bindtap="jumpReview" hover = 'true' hover-class='review-box-hover'>
-      <view class = "review-info">
-        <text class = "review-title">顾影的木心</text>
-        <view class = "review-user-info">
-          <image class = "review-user-avatar" src='../../images/author-1.jpg'/>
-          <text class = "review-user-name">潇湘夜雨</text>
-        </view>
-      </view>
-
-      <view class = "review-content">
-        记者采访木心，谈及木心名字由来，乃孔子弟子称颂老师的话“夫子木铎有心”。限于识见，我未找到此语的出处，倒是论语中有“天将以夫子为木铎”之语。
-      </view>
-
-    </view>
   </view>
   <button class = "add-review-btn" bindtap='addReview'>添加书评</button>
 </view>

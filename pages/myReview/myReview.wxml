@@ -7,45 +7,20 @@
     </view>
   </view>
    <view class='booklist'>
-    <view bindtap='gotoreview' class='listitem'>
+    <view bindtap='gotoreview' class='listitem' wx:for="{{reviewArray}}">
       <view class='container_2'>
-        <view class='listname'>顾影的木心</view>
-        <view class='listinfo'>评《哥伦比亚的倒影》</view>
+        <view class='listname'>{{item.reviewTitle}}</view>
+        <view class='listinfo'>评《{{item.reviewBook}}》</view>
       </view>
       <view class='time'>
-        <view class='year'>2 0 1 8</view>
+        <view class='year'>{{item.reviewDate.year}}</view>
         <view class='date'>
-          <text class='month'>02</text>
-          <text class='day'>27</text>
+          <text class='month'>{{item.reviewDate.month}}</text>
+          <text class='day'>{{item.reviewDate.day}}</text>
         </view>
       </view>
     </view>
-    <view class='listitem'>
-      <view class='container_2'>
-        <view class='listname'>遗失在看不见的城市</view>
-        <view class='listinfo'>评《看不见的城市》</view>
-      </view>
-      <view class='time'>
-        <view class='year'>2 0 1 7</view>
-        <view class='date'>
-          <text class='month'>03</text>
-          <text class='day'>14</text>
-        </view>
-      </view>
-    </view>
-    <view class='listitem'>
-      <view class='container_2'>
-        <view class='listname'>《局外人》筆記：反抗的死囚</view>
-        <view class='listinfo'>评《局外人》</view>
-      </view>
-      <view class='time'>
-        <view class='year'>2 0 1 7</view>
-        <view class='date'>
-          <text class='month'>01</text>
-          <text class='day'>04</text>
-        </view>
-      </view>
-    </view>
+
 
   </view>
 </view>

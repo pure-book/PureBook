@@ -2,28 +2,20 @@
  <view class="author-display-box">
   <image class = "author-avatar" src="../../images/author-1.jpg">
   </image>
-  <text class = "author-name">木心（1927-2011）</text>
+  <text class = "author-name">{{authorInfo.authorName}}</text>
   <scroll-view class = "author-description-box" scroll-y>
     <text class = "author-description">
-      木心，中国当代文学大师、画家，在台湾和纽约华人圈被视为深解中国传统文化的精英和传奇人物。出版多部著作。1927年生于浙江桐乡乌镇东栅。本名孙璞，字仰中，号牧心，笔名木心。毕业于上海美术专科学校。1982年定居纽约。2011年12月21日3时逝世于故乡乌镇，享年84岁。
+      {{authorInfo.authorDescription}}
     </text>
   </scroll-view>
  </view>
  <view class="author-works-box">
   <text class="author-works-box-title">·作品一览·</text>
   <view class="author-works-box-content">
-    <view class="author-work">
-      <text>哥伦比亚的倒影</text>
+    <view class="author-work" wx:for="{{authorWorkArray}}" bindtap='jumpBook'>
+      <text>{{item.authorWorkTitle}}</text>
     </view>
-    <view class="author-work">
-      <text>云雀叫了一整天</text>
-    </view>
-    <view class="author-work">
-      <text>素履之往</text>
-    </view>
-    <view class="author-work">
-      <text>文学回忆录</text>
-    </view>
+  
   </view>
  </view>
 

@@ -8,25 +8,11 @@
     </view>
   </view>
   <view class='booklist'>
-    <view class='listitem'>
+    <view class='listitem' wx:for="{{booklistArray}}" bindtap='jumpBooklist'>
       <view class='listicon'></view>
       <view class='container_2'>
-        <view class='listname'>文学、音乐与艺术</view>
-        <view class='listinfo'>10本书·被收藏10次</view>
-      </view>
-    </view>
-    <view class='listitem'>
-      <view class='listicon'></view>
-      <view class='container_2'>
-        <view class='listname'>我是即将到来的日子</view>
-        <view class='listinfo'>23本书·被收藏12次</view>
-      </view>
-    </view>
-    <view class='listitem'>
-      <view class='listicon'></view>
-      <view class='container_2'>
-        <view class='listname'>阿尔贝·加缪经典</view>
-        <view class='listinfo'>7本书·被收藏5次</view>
+        <view class='listname'>{{item.booklistName}}</view>
+        <view class='listinfo'>{{item.bookCount}}本书·被收藏{{item.starCount}}次</view>
       </view>
     </view>
   </view>

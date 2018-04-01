@@ -3,30 +3,26 @@
   <view class = "book-information-box">
     <view class = "book-display-box">
       <view class = "book-display">
-        <text class = "book-sentence">“人害怕寂寞，害怕到无耻的程度。换言之，人的某些无耻行径是由于害怕寂寞而做出来的。”</text>
-        <image class = "book-cover" src="../../images/book-cover-1.jpeg"/>
+        <text class = "book-sentence">{{bookInfo.bookSentence}}</text>
+        <image class = "book-cover" src="{{bookInfo.bookCover}}"/>
       </view>
-      <text class = "book-title">哥伦比亚的倒影</text>
+      <text class = "book-title">{{bookInfo.bookTitle}}</text>
     </view>
     <view class = "author-display-box">
       <image class = "author-avatar" src = "../../images/author-1.jpg"/>
-      <text class = "author-name">木心(1927-2011)</text>
+      <text class = "author-name">{{bookInfo.authorName}}</text>
     </view>
   </view>
   <view class = "button-box">
     <text style='font-size:36rpx'>·简介·</text>
   </view>
   <scroll-view class = "book-description-box" scroll-y>
-    <text class = "book-description">他的文字，是那么样的一种富有人类感情与文化表情的中国汉字，优雅、从容、洗练、蕴藉，极为讲究。洋粹他也懂，国粹他也懂，但他不是简单的中西合璧，弄出个“三明治”来，就像他用水墨来描画他的风景，他是用纯粹的中文书写思维，来表述他对世界的体认与感怀。
-	他也用汉赋般的奇字，但不怪。他的文字有节奏，一读就发现标点的重要。他可以东一个棋西一个棋地走，到后来平平服服。</text>
+    <text class = "book-description">{{bookInfo.bookDescription}}</text>
   </scroll-view>
 
   <view class = "book-tag-container">
     <text class = "book-tag-container-title">标签</text>
-    <view class = "book-tag">木心作品</view>
-    <view class = "book-tag">艺术</view>
-    <view class = "book-tag">人文</view>
-    <view class = "book-tag">散文</view>
+    <view class = "book-tag" wx:for='{{bookInfo.bookTagArray}}'>{{item.bookTag}}</view>
   </view>
   <template is="tabbar" data="{{tabbar:bindData.tabbar}}"/>
 
