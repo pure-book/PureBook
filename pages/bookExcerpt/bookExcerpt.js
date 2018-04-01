@@ -75,6 +75,8 @@ Page({
   },
 
   addExcerpt:function(){
-    
+    wx.navigateTo({
+      url: '../addExcerpt/addExcerpt',
+    })
   }
 })

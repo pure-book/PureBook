@@ -2,10 +2,10 @@
 <import src = "../../components/tabbar/tabbar.wxml"/>
 <view>
   <view class = "book-info">
-    <text class = "book-title">{{bookInfo.bookTitle}}</text>
+    <text class = "book-title">{{bookInfo.bookName}}</text>
     <view class = "author-button-container">
       <text class = "author-info">{{bookInfo.bookAuthor}}</text>
-      <view class = "button-box"><text>未喜欢</text><text>未读</text></view>
+      
     </view>
     <text class = "sentence">- 经典永远不会褪色 -</text>
   </view>

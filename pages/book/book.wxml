@@ -15,6 +15,7 @@
   </view>
   <view class = "button-box">
     <text style='font-size:36rpx'>·简介·</text>
+    <text class="{{likeStatus?'fa fa-heart':'fa fa-heart-o'}}" bindtap="{{likeStatus?'setunlike':'setlike'}}" ></text>
   </view>
   <scroll-view class = "book-description-box" scroll-y>
     <text class = "book-description">{{bookInfo.bookDescription}}</text>

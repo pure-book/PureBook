@@ -16,7 +16,8 @@ Page({
         bookTag:"人文"
       },{
         bookTag:"散文"
-      }]
+      }],
+      likeStatus:false
     }
     
     
@@ -25,6 +26,26 @@ Page({
   onLoad:function(){
     template.tabbar("tabbar", 0, this)
   },
+
+  setlike: function () {
+    wx.showToast({
+      title: '已喜欢本书',
+      duration: 1500
+    }),
+
+      this.setData({
+        likeStatus: true
+      })
+  },
+  setunlike: function () {
+    wx.showToast({
+      title: '已取消喜欢本书',
+      duration: 1500
+    }),
+      this.setData({
+        likeStatus: false
+      })
+  }
 
   
 
