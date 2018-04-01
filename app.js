@@ -8,10 +8,56 @@ App({
 
     // 登录
     wx.login({
-      success: res => {
+      success: function(r){
+        var code = r.code
+        if(code){
+          wx.getUserInfo({
+            success:function(res){
+              console.log({
+                encryptedData: res.encryptedData,
+                iv: res.iv,
+                code: code
+              }),
+              wx.request({
+                url: '/login',
+                method:'post',
+                header:{
+                  
+                },
+                data:{
+                  encryptedData:res.encryptedData,
+                  iv:res.iv,
+                  code:code
+                },
+                //判断是否解密成功
+                success:function(data){
+                  if(data.data.status==1){
+                    var userInfo_ = data.data.userInfo
+                    console.log(userInfo_)
+                  }else{
+                    console.log("解密失败")
+                  }
+                },
+                fail:function(){
+                  console.log("系统错误")
+                }
+              })
+            },
+            fail:function(){
+              console.log("获取用户信息失败")
+            }
+          })
+        }else{
+          console.log("获取用户登录状态失败"+res.errMsg)
+        }
+        
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+      },
+      fail:function(){
+        callback(false)
       }
     })
+    
     // 获取用户信息
     wx.getSetting({
       success: res => {
