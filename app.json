@@ -17,6 +17,7 @@
     "pages/myBooklist/myBooklist",
     "pages/like/like",
     "pages/myReview/myReview",
+    "pages/searchResult/searchResult",
     "pages/setting/setting"
     
   ],
