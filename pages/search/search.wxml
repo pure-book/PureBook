@@ -1,6 +1,6 @@
 <!--pages/search/search.wxml-->
 <view class='search'>
-  <input placeholder='输入你感兴趣的书籍、作者' auto-focus></input>
+  <input placeholder='输入你感兴趣的书籍、作者，或标签' auto-focus></input>
 </view>
 <view class='title'>/ 热门书籍/</view>
   <view class='book'>
