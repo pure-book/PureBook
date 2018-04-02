@@ -28,24 +28,28 @@ Page({
 
   onLoad:function(options){
     template.tabbar("tabbar", 0, this)
+
     var api = "/books/"+options.id
     var that = this
     var params = {
     }
     http.GET(api, params, function (res) {
-      console.log(res.data.data)
+      const data = res.data.data
+      app.globalData.currentBookId = data.id
       that.setData({
-        'bookInfo.bookId':res.data.data.id,
-        'bookInfo.bookTitle':res.data.data.name,
-        'bookInfo.bookCover':res.data.data.cover,
-        'bookInfo.bookDescription':res.data.data.intro,
-        'bookInfo.authorName':res.data.data.author
+        'bookInfo.bookId':data.id,
+        'bookInfo.bookTitle':data.name,
+        'bookInfo.bookCover':data.cover,
+        'bookInfo.bookDescription':data.intro,
+        'bookInfo.authorName':data.author
 
       })
       
 
 
     })
+
+    
   },
 
   setlike: function () {

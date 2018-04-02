@@ -33,7 +33,9 @@ function tabbarmain(bindName = "tabdata", id, target) {
   otabbar[id]['iconPath'] = otabbar[id]['selectedIconPath']//换当前的icon
   otabbar[id]['current'] = 1;
   bindData[bindName] = otabbar
-  that.setData({ bindData });
+  bindData['bookId'] = bindData.tabbar
+  that.setData({ bindData })
+
 }
 
 module.exports = {

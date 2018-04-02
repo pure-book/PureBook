@@ -5,7 +5,6 @@ var http = require('../../utils/httpUtil.js')
 Page({
 
   data: {
-    
     bookInfo:{
       bookTitle: "",
       authorName: "",
@@ -26,13 +25,13 @@ Page({
     var that = this
     var api = "/books/"+options.id+"/review"
     var params = {}
+    console.log(options)
     http.GET(api, params, function (res) {
       const data = res.data.data;
       console.log(data)
       that.setData({
-        
-        'bookInfo.bookIitle': options.bookName,
-        'bookInfo.authorName': data.name,
+        'bookInfo.bookTitle': options.bookName,
+        'bookInfo.authorName': options.bookAuthor,
         'bookInfo.bookId':data.bookId,
         'reviewInfo.reviewTitle': data.title,
         'reviewInfo.reviewId': data.id,

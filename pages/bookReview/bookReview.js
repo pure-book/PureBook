@@ -1,4 +1,5 @@
 // pages/bookReview/bookReview.js
+const app = getApp()
 var template = require('../../components/tabbar/tabbar.js')
 var http = require('../../utils/httpUtil.js')
 
@@ -8,20 +9,17 @@ Page({
    * 页面的初始数据
    */
   data: {
+    bookId:0,
     bookInfo:{
-      bookTitle:"哥伦比亚的倒影",
-      bookAuthor:"木心(1927-2011)"
+      bookTitle:"",
+      bookAuthor:""
     },
     bookReviewArray:[{
-      bookReviewTitle:"顾影的木心",
-      bookReviewUserAvatar:"../../images/author-1.jpg",
-      bookReviewUserName:"潇湘夜雨",
-      bookReviewContent:"记者采访木心，谈及木心名字由来，乃孔子弟子称颂老师的话“夫子木铎有心”。限于识见，我未找到此语的出处，倒是论语中有“天将以夫子为木铎”之语。"
-    },{
-      bookReviewTitle:"顾影的木心",
-      bookReviewUserAvatar:"../../images/author-1.jpg",
-      bookReviewUserName:"潇湘夜雨",
-      bookReviewContent:"记者采访木心，谈及木心名字由来，乃孔子弟子称颂老师的话“夫子木铎有心”。限于识见，我未找到此语的出处，倒是论语中有“天将以夫子为木铎”之语。"
+      bookReviewTitle:"",
+      bookReviewUserAvatar:"",
+      bookReviewUserName:"",
+      bookReviewContent:"",
+      bookReviewId:0
     }]
   
   },
@@ -31,12 +29,39 @@ Page({
    */
   onLoad: function (options) {
     template.tabbar("tabbar", 2, this)
-    var api = ""
-    var params = {
+    var that = this
+    var bookId = app.globalData.currentBookId
+    that.setData({ 'bookId': bookId})
+    var api1 = "/books/" + bookId+"/reviews"
+    var params1 = {}
+    http.GET(api1, params1, function (res) {
+      const data = res.data.data
+      console.log(data)
+      for (var i = 0; i < data.length; i++) {
+        const param1 = "bookReviewArray[" + i + "].bookReviewTitle"
+        const param2 = "bookReviewArray[" + i + "].bookReviewUserAvatar"
+        const param3 = "bookReviewArray[" + i + "].bookReviewUserName"
+        const param4 = "bookReviewArray[" + i + "].bookReviewContent"
+        const param5 = "bookReviewArray[" + i + "].bookReviewId"
+        that.setData({
+          [param1]: data[i].title,
+          [param2]: data[i].userAvatar,
+          [param3]: data[i].userName,
+          [param4]:data[i].review,
+          [param5]:data[i].id
+        })
+      }
+    })
 
-    }
-    http.GET(api, params, function (res) {
+    var api2 = "/books/" + bookId
+    var params2 = {}
+    http.GET(api2, params2, function (res) {
+      const data = res.data.data
+      that.setData({
+        'bookInfo.bookTitle': data.name,
+        'bookInfo.bookAuthor': data.author
 
+      })
     })
   
   },
@@ -48,9 +73,10 @@ Page({
     })
   },
 
-  jumpReview:function(){
+  jumpReview:function(e){
+    var index = e.target.dataset.index
     wx.navigateTo({
-      url: '../reviewDetail/reviewDetail',
+      url: '../reviewDetail/reviewDetail?id=' + this.data.bookReviewArray[index].bookReviewId+'&bookName='+this.data.bookInfo.bookTitle+'&bookAuthor='+this.data.bookInfo.bookAuthor
     })
   }
 })

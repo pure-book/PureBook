@@ -1,6 +1,6 @@
 var baseUrl = "http://172.17.3.186:4000/v1"
 var GET_METHOD="GET"
-var POST_METHOD="PUT"
+var POST_METHOD="POST"
 
 
 function request(api,method,params,success){
@@ -30,7 +30,7 @@ function getRequest(api,params,success){
 }
 
 function postRequest(api, params, success) {
-  request(api, POST_METHOD, params, success)
+  request(api,POST_METHOD, params, success)
 }
 
 

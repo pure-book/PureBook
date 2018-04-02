@@ -11,7 +11,7 @@
   </view>
   
   <view class = "review-container">
-    <view class = "review-box" bindtap="jumpReview" hover = 'true' hover-class='review-box-hover' wx:for="{{bookReviewArray}}">
+    <view class = "review-box" bindtap="jumpReview" hover = 'true' hover-class='review-box-hover' wx:for="{{bookReviewArray}}" data-index="{{index}}">
       <view class = "review-info">
         <text class = "review-title">{{item.bookReviewTitle}}</text>
         <view class = "review-user-info">

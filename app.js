@@ -101,6 +101,7 @@ App({
 
   globalData: {
     userInfo: null,
-    userId:""
+    userId:"",
+    currentBookId:0
   }
 })
