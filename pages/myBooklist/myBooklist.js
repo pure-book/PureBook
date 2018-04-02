@@ -30,9 +30,11 @@ Page({
         var param2 = "booklistArray[" + i + "].bookCount"
         var param3 = "booklistArray[" + i + "].starCount"
         var param4 = "booklistArray[" + i + "].authorId"
+        var param5 = "booklistArray[" + i + "].booklistId"
         that.setData({
           [param1]: res.data.data[i].name,
-          [param4]:res.data.data[i].userId
+          [param4]:res.data.data[i].userId,
+          [param5]:res.data.data[i].id
         })
       }
     })
@@ -45,8 +47,11 @@ Page({
   jumpBooklist:function(e){
     var index = e.target.dataset.index
     wx.navigateTo({
-      url: '../booklist/booklist?id='+this.data.booklistArray[index].booklistId,
+      url: '../booklist/booklist?id='+this.data.booklistArray[index].booklistId
+      +'&name='+this.data.booklistArray[index].booklistName
     })
   }
+
+  
 
 })

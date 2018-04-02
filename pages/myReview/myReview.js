@@ -35,7 +35,6 @@ Page({
         const param6 = "reviewArray[" + i + "].reviewDay"
     
         http.GET("/books/"+data[i].bookId,{},function(r){
-          
           that.setData({
             [param1]: data[i].title,
             [param2]: r.data.data.name,
@@ -49,9 +48,10 @@ Page({
     })
   },
   
-  gotoreview: function(){
+  gotoreview: function (e){
+    var index = e.target.dataset.index
     wx.navigateTo({
-      url: '../bookReview/bookReview?id=' + this.data.reviewArray[index].reviewId,
+      url: '../reviewDetail/reviewDetail?id=' + this.data.reviewArray[index].reviewId+'&bookName='+this.data.reviewArray[index].reviewBook,
     })
   }
 

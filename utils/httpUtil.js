@@ -1,4 +1,4 @@
-var baseUrl = "http://10.20.171.225:4000/v1"
+var baseUrl = "http://172.17.3.186:4000/v1"
 var GET_METHOD="GET"
 var POST_METHOD="PUT"
 

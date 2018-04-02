@@ -1,28 +1,26 @@
 const app = getApp()
+var http = require('../../utils/httpUtil.js')
 
 Page({
   data: {
     userInfo: {},
-    booklistName:"我是即将到来的日子",
+    booklistName:"",
+    booklistId:0,
     likeBookArray: [{
-      bookName: "《荒原狼》",
-      bookAuthor: "赫尔曼·黑塞"
-    }, {
-      bookName: "《看不见的城市》",
-      bookAuthor: "卡尔维诺"
-    }, {
-      bookName: "《西西福斯神话》",
-      bookAuthor: "加缪"
+      bookName: "",
+      bookAuthor: "",
+      bookId:0
     }]
   },
 
-  jumpBook: function () {
+  jumpBook: function (e) {
+    var index = e.target.dataset.index
     wx.navigateTo({
-      url: '../book/book',
+      url: '../book/book?id=' + this.data.likeBookArray[index].bookId,
     })
   },
 
-  onLoad: function () {
+  onLoad: function (options) {
     var that = this
     app.getUserInfo(function (userInfo) {
       that.setData({
@@ -30,6 +28,30 @@ Page({
       })
     })
 
-  },
+    var api = "/users/" + app.globalData.userId + "/booklist/book"
+    var params={
+      'booklistId':options.id
+    }
+    http.GET(api, params, function (res) {
+      const data = res.data.data
+      for (var i = 0; i < data.length; i++) {
+        const param1 = "likeBookArray[" + i + "].bookName"
+        const param2 = "likeBookArray[" + i + "].bookAuthor"
+        const param3 = "likeBookArray[" + i + "].bookId"
+
+
+        that.setData({
+          [param1]: data[i].name,
+          [param2]:data[i].author,
+          [param3]: data[i].id
+        })
+      }
+      that.setData({
+        'booklistName': options.name,
+        'booklistId':options.id
+      })
+    })
+
+  }
 
 })

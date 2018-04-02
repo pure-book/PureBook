@@ -16,13 +16,14 @@ App({
           wx.getUserInfo({
             success:function(res){
               wx.request({
-                url: 'http://10.20.171.225:4000/v1/login/decodeUserInfo',
+                url: 'http://172.17.3.186:4000/v1/login/decodeUserInfo',
                 method:"POST",
                 data:{
                   encryptedData:res.encryptedData,
                   iv:res.iv,
                   code:code,
-                  userName: res.userInfo.nickName
+                  userName: res.userInfo.nickName,
+                  userAvatar:res.userInfo.avatarUrl
                 },
                 //判断是否解密成功
                 success:function(data){
