@@ -13,8 +13,6 @@ Page({
 
   jumpBook: function (e) {
     var index = e.target.dataset.index
-    // console.log(index)
-    // console.log(this.data.likeBookArray[index].bookId)
     wx.navigateTo({
       url: '../book/book?id='+this.data.likeBookArray[index].bookId,
     })

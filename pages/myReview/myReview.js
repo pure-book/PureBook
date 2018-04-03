@@ -37,7 +37,6 @@ Page({
         const param7 = "reviewArray[" + i + "].bookAuthor"
     
         http.GET("/books/"+data[i].bookId,{},function(r){
-          console.log(r.data.data.author)
           that.setData({
             [param1]: data[i].title,
             [param2]: r.data.data.name,

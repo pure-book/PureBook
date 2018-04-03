@@ -12,13 +12,7 @@ Page({
       authorName:"",
       bookDescription: "",
       bookTagArray:[{
-        bookTag:"木心作品"
-      },{
-        bookTag:"艺术"
-      },{
-        bookTag:"人文"
-      },{
-        bookTag:"散文"
+        bookTag:""
       }],
       likeStatus:false
     }
@@ -28,12 +22,10 @@ Page({
 
   onLoad:function(options){
     template.tabbar("tabbar", 0, this)
-
-    var api = "/books/"+options.id
     var that = this
-    var params = {
-    }
-    http.GET(api, params, function (res) {
+    var api1 = "/books/"+options.id
+    var params1 = {}
+    http.GET(api1, params1, function (res) {
       const data = res.data.data
       app.globalData.currentBookId = data.id
       that.setData({
@@ -48,28 +40,82 @@ Page({
 
 
     })
+    var api2 = "/users/" + app.globalData.userId+"/relation"
+    var params2 = {
+      'bookId': options.id
+    }
+    http.GET(api2, params2, function (res) {
+      console.log(res)
+      if(res.data.message=="成功"){
+        that.setData({
+          likeStatus:true
+        })
+      }else{
+        that.setData({
+          likeStatus: false
+        })
+      }
+    })
 
+
+    var api3 = "/books/" + options.id + "/tags"
+    var params3 = {}
+    http.GET(api3, params3, function (res) {
+      const data = res.data.data
+      console.log(data)
+      for (var i = 0; i < 4; i++) {
+        const param1 = "bookInfo.bookTagArray[" + i + "].bookTag"       
+        that.setData({
+          [param1]: data[i].field,
+        })
+      }
+    })
     
   },
 
   setlike: function () {
-    wx.showToast({
-      title: '已喜欢本书',
-      duration: 1500
-    }),
-
-      this.setData({
+    var that = this
+    var api = "/users/" + app.globalData.userId + "/collection"
+    var params = {
+      'bookId': that.data.bookInfo.bookId
+    }
+    http.POST(api, params, function (res) {
+      console.log(res)
+      wx.showToast({
+        title: '已喜欢本书',
+        duration: 1500
+      })
+      that.setData({
         likeStatus: true
       })
+    })
   },
+
   setunlike: function () {
-    wx.showToast({
-      title: '已取消喜欢本书',
-      duration: 1500
-    }),
-      this.setData({
-        likeStatus: false
-      })
+    var that = this
+    var api = "/users/" + app.globalData.userId + "/collection?bookId=" + that.data.bookInfo.bookId
+    var params = {
+      //'bookId': that.data.bookInfo.bookId
+    }
+    http.DELETE(api,params,function(res){
+      if(res.data.message=="成功"){
+        wx.showToast({
+          title: '已取消喜欢本书',
+          duration: 1500
+        })
+        that.setData({
+          likeStatus: false
+        })
+      }else{
+        wx.showToast({
+          title: '失败',
+          duration: 1500
+        })
+      }
+      
+    })
+    
+      
   }
 
   
