@@ -21,6 +21,44 @@ Page({
   
   },
 
+  onShow: function () {
+    var that = this
+    var bookId = app.globalData.currentBookId
+    that.setData({ 'bookId': bookId })
+    var api1 = "/books/" + bookId + "/reviews"
+    var params1 = {}
+    http.GET(api1, params1, function (res) {
+      const data = res.data.data
+      console.log(data)
+      for (var i = 0; i < data.length; i++) {
+        const param1 = "bookReviewArray[" + i + "].bookReviewTitle"
+        const param2 = "bookReviewArray[" + i + "].bookReviewUserAvatar"
+        const param3 = "bookReviewArray[" + i + "].bookReviewUserName"
+        const param4 = "bookReviewArray[" + i + "].bookReviewContent"
+        const param5 = "bookReviewArray[" + i + "].bookReviewId"
+        that.setData({
+          [param1]: data[i].title,
+          [param2]: data[i].userAvatar,
+          [param3]: data[i].userName,
+          [param4]: data[i].review,
+          [param5]: data[i].id
+        })
+      }
+    })
+
+    var api2 = "/books/" + bookId
+    var params2 = {}
+    http.GET(api2, params2, function (res) {
+      const data = res.data.data
+      that.setData({
+        'bookInfo.bookTitle': data.name,
+        'bookInfo.bookAuthor': data.author
+
+      })
+    })
+  },
+
+
   onLoad: function (options) {
     template.tabbar("tabbar", 2, this)
     var that = this

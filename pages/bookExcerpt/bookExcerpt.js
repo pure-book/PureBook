@@ -20,9 +20,22 @@ Page({
   
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
+  onShow:function(){
+    var that = this
+    var api = "/books/" + app.globalData.currentBookId + "/excerpt"
+    var params = {}
+    http.GET(api, params, function (res) {
+      const data = res.data.data
+      console.log(data)
+      for (var i = 0; i < data.length; i++) {
+        const param1 = "bookExcerptArray[" + i + "].excerptContent"
+        that.setData({
+          [param1]: data[i].content
+        })
+      }
+    })
+  },
+
   onLoad: function (options) {
     template.tabbar("tabbar", 1, this)
     var that = this

@@ -14,21 +14,13 @@ Page({
 
 
   onLoad: function (options) {
-    var api1 = ""
-    var params1 = {}
-    http.POST(api1,params1,function(res){
+    var that = this
+    var api = "/books/" + options.bookId
+    var params = {}
+    http.GET(api, params, function (res) {
       const data = res.data.data
       that.setData({
-
-      })
-    })
-
-    var api2 = "/books/" + bookId
-    var params2 = {}
-    http.GET(api2, params2, function (res) {
-      const data = res.data.data
-      that.setData({
-        'bookTitle': data.name,
+        'bookName': data.name,
         'bookAuthor': data.author,
         'bookId':data.id
       })
@@ -37,12 +29,25 @@ Page({
   },
 
   submitReview: function(){
-    wx.showToast({
-      title: '已提交'
+    var that = this
+    var api = "/users/" + app.globalData.userId + "/reviews"
+    var params = {
+      bookId: that.data.bookId,
+      review:that.data.reviewContent,
+      title: that.data.reviewTitle
+    }
+    http.POST(api, params, function (res) {
+      const data = res.data.data
+      wx.showToast({
+        title: '已提交',
+      })
+
+      wx.navigateBack({
+        delta: 1
+      })
     })
-    wx.navigateBack({
-      delta:1
-    })
+
+    
   },
 
   titleInput:function(e){

@@ -16,7 +16,7 @@ App({
           wx.getUserInfo({
             success:function(res){
               wx.request({
-                url: 'http://172.17.3.186:4000/v1/login/decodeUserInfo',
+                url: 'http://101.132.123.33:8080/purebook/v1/login/decodeUserInfo',
                 method:"POST",
                 data:{
                   encryptedData:res.encryptedData,
