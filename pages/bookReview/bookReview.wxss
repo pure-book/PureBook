@@ -4,26 +4,20 @@
   flex-direction: column;
   justify-content: flex-start;
   margin-top:20rpx;
-  margin-left:40rpx;
 }
 
 .book-title{
   font-size:72rpx;
   font-family: 'FZQingKeBenYueSongS-R-GB';
   color: #444444;
-}
-
-.author-button-container{
-  display: flex;
-  flex-direction: row;
-  margin-top:20rpx;
+  margin-left:40rpx;
 }
 
 .author-info{
   font-size:48rpx;
   font-family: 'FZQingKeBenYueSongS-R-GB';
   color: #444444;
-
+  margin-left:40rpx;
 }
 
 .button-box{

@@ -4,7 +4,6 @@ var template = require('../../components/tabbar/tabbar.js')
 var http = require('../../utils/httpUtil.js')
 
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -21,7 +20,6 @@ Page({
       bookReviewContent:"",
       bookReviewId:0
     }]
-  
   },
 
   /**
@@ -63,9 +61,7 @@ Page({
 
       })
     })
-  
   },
-
 
   addReview:function(){
     wx.navigateTo({

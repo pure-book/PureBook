@@ -3,24 +3,24 @@ function tabbarinit(){
     {
       "current": 0,
       "pagePath": "../../pages/book/book",
-      "iconPath": "",
-      "selectedIconPath": "",
+      "iconPath": "../../images/Introduction.png",
+      "selectedIconPath": "../../images/IntroductionSelected.png",
       "text": "Introduction"
     },
     {
       "current": 0,
       "pagePath": "../../pages/bookExcerpt/bookExcerpt",
-      "iconPath": "",
-      "selectedIconPath": "",
+      "iconPath": "../../images/Excerpt.png",
+      "selectedIconPath": "../../images/ExcerptSelected.png",
       "text": "Excerpt"
 
     },
     {
       "current": 0,
       "pagePath": "../../pages/bookReview/bookReview",
-      "iconPath": "",
-      "selectedIconPath": "",
-      "text": "Reivew"
+      "iconPath": "../../images/Review.png",
+      "selectedIconPath": "../../images/ReviewSelected.png",
+      "text": "Review"
     },
     
   ]

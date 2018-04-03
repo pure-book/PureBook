@@ -5,7 +5,6 @@
     <text class = "book-title">{{bookInfo.bookTitle}}</text>
     <view class = "author-button-container">
       <text class = "author-info">{{bookInfo.bookAuthor}}</text>
-      <view class = "button-box"><text>未喜欢</text><text>未读</text></view>
     </view>
     <text class = "sentence">- 分享你的想法 -</text>
   </view>

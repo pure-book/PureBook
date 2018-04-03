@@ -76,8 +76,6 @@ App({
         }
       }
     })
-
-
   },
 
   getUserInfo:function(cb){

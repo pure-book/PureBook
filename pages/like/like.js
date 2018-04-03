@@ -9,7 +9,6 @@ Page({
       bookAuthor:"default",
       bookId:0
     }]
-
   },
 
   jumpBook: function (e) {
@@ -43,9 +42,6 @@ Page({
           [param3]:res.data.data[i].id
         })
       }
-
     })
-
   },
-  
 })

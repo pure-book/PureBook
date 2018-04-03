@@ -32,16 +32,12 @@ Page({
         var param4 = "booklistArray[" + i + "].authorId"
         var param5 = "booklistArray[" + i + "].booklistId"
         that.setData({
-          [param1]: res.data.data[i].name,
+          [param1]:res.data.data[i].name,
           [param4]:res.data.data[i].userId,
           [param5]:res.data.data[i].id
         })
       }
     })
-
-
-
-
   },
 
   jumpBooklist:function(e){
