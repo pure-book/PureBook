@@ -12,6 +12,10 @@ Page({
       bookAuthor: "",
       bookId:0
     },
+    excerptInfo:{
+      content:"",
+      excerptAuthorId:""
+    }
   
   },
 
@@ -31,7 +35,7 @@ Page({
     var api2 = "/users/"+app.globalData.userId+"/excerpt"
     var params2={
       bookId:options.bookId,
-      content:"excellent"
+      content:that.data.excerptInfo.content
     }
     http.POST(api2, params2, function (res) {
       const data = res.data.data
@@ -45,6 +49,12 @@ Page({
   submitExcerpt: function(){
     wx.showToast({
       title: '已提交',
+    })
+  },
+
+  bindExcerptInput:function(e){
+    this.setData({
+      'excerptInfo.content': e.detail.value
     })
   }
 })

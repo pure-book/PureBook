@@ -10,7 +10,7 @@
     <text class = "sentence">- 添加摘录 -</text>
   </view>
   <view class='addTitle'>
-    <input placeholder='写下你喜欢的句子' placeholder-class='title' auto-focus></input>
+    <input placeholder='写下你喜欢的句子' placeholder-class='title' auto-focus bindinput='bindExcerptInput'></input>
   </view>
 </view>
 
