@@ -2,9 +2,9 @@
 <import src = "../../components/tabbar/tabbar.wxml"/>
 <view>
   <view class = "book-info">
-    <text class = "book-title">{{bookInfo.bookName}}</text>
+    <text class = "book-title">{{bookName}}</text>
     <view class = "author-button-container">
-      <text class = "author-info">{{bookInfo.bookAuthor}}</text>
+      <text class = "author-info">{{bookAuthor}}</text>
       <text class = "submit" bindtap='submitReview'>·提交·</text>
     </view>
     <text class = "sentence">- 添加书评 -</text>

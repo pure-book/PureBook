@@ -5,9 +5,6 @@ var http = require('../../utils/httpUtil.js')
 
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
     bookId:0,
     bookInfo:{
@@ -24,9 +21,6 @@ Page({
   
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
     template.tabbar("tabbar", 2, this)
     var that = this
@@ -69,7 +63,7 @@ Page({
 
   addReview:function(){
     wx.navigateTo({
-      url: '../addReview/addReview',
+      url: '../addReview/addReview?bookId='+this.data.bookId,
     })
   },
 

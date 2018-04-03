@@ -50,6 +50,9 @@ Page({
     wx.showToast({
       title: '已提交',
     })
+    wx.navigateBack({
+      delta: 1
+    })
   },
 
   bindExcerptInput:function(e){
