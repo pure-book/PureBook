@@ -7,7 +7,8 @@ var DELETE_METHOD="DELETE"
 function request(api,method,params,success){
   wx.showToast({
     title: '加载中', 
-    duration:10000
+    duration:10000,
+    icon:'loading'
   })
   wx.request({
     url: baseUrl+api,
@@ -19,7 +20,8 @@ function request(api,method,params,success){
     },
     fail:function(res){
       wx.showToast({
-        title: '请检查网络'
+        title: '请检查网络',
+        icon:'loading'
       })
     }
 

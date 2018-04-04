@@ -9,15 +9,9 @@ Page({
    */
   data: {
     BookArray: [{
-      BookTitle: "哥伦比亚的倒影",
-      BookCover: "../../images/book-cover-1.jpeg"
-    }, {
-      BookTitle: "哥伦比亚的倒影",
-      BookCover: "../../images/book-cover-1.jpeg"
-      }, {
-        BookTitle: "哥伦比亚的倒影",
-        BookCover: "../../images/book-cover-1.jpeg"
-      }
+      BookTitle: "",
+      BookCover: ""
+    }
     ],
     AuthorArray: [{
       AuthorName:"木心",
@@ -36,12 +30,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var api = ""
+    var that = this
+    var api = "/books/hot"
     var params = {
 
     }
     http.GET(api, params, function (res) {
+      const data = res.data.data
+      for (var i = 0; i < res.data.data.length; i++) {
+        var param1 = "BookArray[" + i + "].BookTitle"
+        var param2 = "BookArray[" + i + "].BookCover"
 
+        that.setData({
+          [param1]: res.data.data[i].name,
+          [param2]: res.data.data[i].cover
+        })
+      } 
     })
 
   },
@@ -60,38 +64,14 @@ Page({
   
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+  Search: function(e){
+    wx.navigateTo({
+      url: '../searchResult/searchResult?content='+e.detail.value
+    })
   }
+
+
+
+
+
 })

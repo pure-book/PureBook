@@ -1,4 +1,7 @@
 // pages/search/search.js
+const app = getApp()
+var http = require('../../utils/httpUtil.js')
+
 Page({
 
   /**
@@ -6,112 +9,118 @@ Page({
    */
   data: {
     BookArray: [{
-      BookTitle: "哥伦比亚的倒影",
-      AuthorName: "木心",
-      BookCover: "../../images/book-cover-1.jpeg",
+      bookId: 0,
+      BookTitle: "",
+      AuthorName: "",
+      BookCover: "",
       bookTagArray: [{
-        bookTag: "木心作品"
-      }, {
-        bookTag: "艺术"
-      }, {
-        bookTag: "人文"
-      }, {
-        bookTag: "散文"
-      }]
-    }, {
-      BookTitle: "哥伦比亚的倒影",
-      AuthorName: "木心",
-      BookCover: "../../images/book-cover-1.jpeg",
-      bookTagArray: [{
-        bookTag: "木心作品"
-      }, {
-        bookTag: "艺术"
-      }, {
-        bookTag: "人文"
-      }, {
-        bookTag: "散文"
-      }]
-    }, {
-      BookTitle: "哥伦比亚的倒影",
-      AuthorName: "木心",
-      BookCover: "../../images/book-cover-1.jpeg",
-      bookTagArray: [{
-        bookTag: "木心作品"
-      }, {
-        bookTag: "艺术"
-      }, {
-        bookTag: "人文"
-      }, {
-        bookTag: "散文"
-      }]
-    }
-    ],
-    AuthorArray: [{
-      AuthorName: "木心",
-      AuthorImage: "../../images/author-1.jpg"
-    }, {
-      AuthorName: "木心",
-      AuthorImage: "../../images/author-1.jpg"
-    }, {
-      AuthorName: "木心",
-      AuthorImage: "../../images/author-1.jpg"
-    }
-    ]
+        bookTag: ""
+      }]      
+    }]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this
+    //console.log(options.content)
+    var api="/books"
+    var params={
+      nameLike:options.content
+    }
 
+    http.GET(api,params,function(res){
+      const data = res.data.data
+      console.log(res.data.data)
+      for (let i = 0; i < res.data.data.length; i++) {
+        const param1 = "BookArray[" + i + "].BookTitle"
+        const param2 = "BookArray[" + i + "].AuthorName"
+        const param3 = "BookArray[" + i + "].BookCover"
+        const param4 = "BookArray[" + i + "].bookId"
+       
+        that.setData({
+          [param1]: res.data.data[i].name,
+          [param2]: res.data.data[i].author,
+          [param3]: res.data.data[i].cover,
+          [param4]: res.data.data[i].id
+        })
+
+        var api2 = "/books" + res.data.data[i].id + "/tags"
+        console.log(i)
+        var params2 = {}
+        http.GET(api2, params2, function (res) {
+          const data = res.data.data
+          console.log(data)
+          for (let j = 0; j < 3; j++) {
+            const param = "BookArray[" + i + "].bookTagArray[" + j + "].bookTag"
+            console.log(i)
+            that.setData({
+              [param]: data[j].field,
+            })
+          }
+        })
+      }
+    })
+
+    var api3 = "/tags"
+    var params3 = {
+      tag: options.content
+    }
+
+    http.GET(api3, params3, function (res) {
+      const data = res.data.data
+      console.log(res.data.data)
+      for (let i = 0; i < res.data.data.length; i++) {
+        const param1 = "BookArray[" + i + "].BookTitle"
+        const param2 = "BookArray[" + i + "].AuthorName"
+        const param3 = "BookArray[" + i + "].BookCover"
+        const param4 = "BookArray[" + i + "].bookId"
+
+        that.setData({
+          [param1]: res.data.data[i].name,
+          [param2]: res.data.data[i].author,
+          [param3]: res.data.data[i].cover,
+          [param4]: res.data.data[i].id
+        })
+
+        var api2 = "/books/" + res.data.data[i].id + "/tags"
+        console.log(i)
+        var params2 = {}
+        http.GET(api2, params2, function (res) {
+          const data = res.data.data
+          console.log(data)
+          for (let j = 0; j < 3; j++) {
+            const param = "BookArray[" + i + "].bookTagArray[" + j + "].bookTag"
+            console.log(i)
+            that.setData({
+              [param]: data[j].field,
+            })
+          }
+        })
+      }
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
+  
   onShow: function () {
 
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
 
+  Search: function (e) {
+    wx.redirectTo({
+      url: '../searchResult/searchResult?content=' + e.detail.value
+    })
+    
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  jumpBook: function (e) {
+    var that = this
+    var index = e.target.dataset.index
+    console.log(that.data.BookArray[index].bookId)
+    wx.navigateTo({
+      url: '../book/book?id=' + that.data.BookArray[index].bookId,
+    })
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

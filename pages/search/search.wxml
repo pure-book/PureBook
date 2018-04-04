@@ -1,6 +1,6 @@
 <!--pages/search/search.wxml-->
 <view class='search'>
-  <input placeholder='输入你感兴趣的书籍、作者，或标签' auto-focus></input>
+  <input placeholder='输入你感兴趣的书籍、作者，或标签' auto-focus bindconfirm='Search'></input>
 </view>
 <view class='title'>/ 热门书籍/</view>
   <view class='book'>
@@ -10,10 +10,3 @@
     </view>
   </view>
 
-<view class='title'>/ 热门作者 /</view>
-<view class='author'>
-  <view class='item' wx:for = "{{AuthorArray}}">
-    <image class='author_img' src = "{{item.AuthorImage}}"></image>
-    <text class='author_name'>{{item.AuthorName}}</text>
-  </view>
-</view>

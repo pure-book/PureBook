@@ -1,9 +1,9 @@
 <!--pages/search/search.wxml-->
 <view class='search'>
-  <input placeholder='输入你感兴趣的书籍、作者，或标签' auto-focus></input>
+  <input placeholder='输入你感兴趣的书籍、作者，或标签' auto-focus bindconfirm='Search'></input>
 </view>
 <view class='result_list'>
-  <view class='result_item' wx:for = "{{BookArray}}">
+  <view class='result_item' wx:for = "{{BookArray}}" bindtap='jumpBook'>
     <image class='book_cover' src = "{{item.BookCover}}"></image>
     <view class='book_info'>
       <view class='book_title'>{{item.BookTitle}}</view>
