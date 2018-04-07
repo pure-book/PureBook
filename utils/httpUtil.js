@@ -1,4 +1,4 @@
-var baseUrl = "http://101.132.123.33:8080/purebook/v1"
+var baseUrl = "http://101.132.123.33:8080/v1"
 var GET_METHOD="GET"
 var POST_METHOD="POST"
 var DELETE_METHOD="DELETE"
