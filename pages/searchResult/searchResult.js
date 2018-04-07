@@ -21,7 +21,7 @@ Page({
   
   onLoad: function (options) {
     var that = this
-    var api="/books"
+    var api="/books/bookname"
     var params={
       nameLike:options.content
     }
@@ -59,7 +59,7 @@ Page({
       }
     })
 
-    var api3 = "/tags"
+    var api3 = "/books/booktag"
     var params3 = {
       tag: options.content
     }
