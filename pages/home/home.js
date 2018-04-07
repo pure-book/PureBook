@@ -81,17 +81,20 @@ Page({
   },
 
   jumpBook:function(e){
+    var that = this
     var index = e.target.dataset.index
-    console.log(e)
+    console.log(index)
     wx.navigateTo({
-      url: "../book/book?id=" + this.data.recommendBookArray[index].recommendBookId
+      url: "../book/book?id=" + that.data.recommendBookArray[index].recommendBookId
     })
   },
 
   jumpBooklist:function(e){
+    var that = this
     var index = e.target.dataset.index
+    console.log(index)
     wx.navigateTo({
-      url: '../booklist/booklist?id=' + this.data.recommendBooklistArray[index].recommendBooklistId + '&name=' + this.data.recommendBooklistArray[index].recommendBooklistTitle
+      url: '../booklist/booklist?id=' + that.data.recommendBooklistArray[index].recommendBooklistId + '&name=' + that.data.recommendBooklistArray[index].recommendBooklistTitle
     })
   },
 
