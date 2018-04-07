@@ -14,9 +14,8 @@
     </view>
   </view>
   <view class = "recommend-book-container">
-    <view class = "recommend-book-box" wx:for="{{recommendBookArray}}"
-    bindtap = 'jumpBook'  data-index="{{index}}">
-      <view class = "recommend-book-display"  hover = 'true' hover-class='recommend-book-box-hover'>
+    <view class = "recommend-book-box" wx:for="{{recommendBookArray}}" data-index="{{index}}">
+      <view class = "recommend-book-display" bindtap = 'jumpBook' hover = 'true' hover-class='recommend-book-box-hover'>
         <view class = "recommend-book-info">
           <text class = "recommend-book-title">{{item.recommendBookTitle}}</text>
           <text class = "recommend-book-description">{{item.recommendBookDescription}}</text>

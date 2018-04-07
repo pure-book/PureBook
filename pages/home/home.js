@@ -30,7 +30,6 @@ Page({
   onLoad:function(){
     var that = this
     var api1 = "/users/" + app.globalData.userId + "/recommand"
-
     var api3 = "/users/" + app.globalData.userId + "/relation"
     var params1={}
     http.GET(api1,params1,function(res){
@@ -81,16 +80,9 @@ Page({
 
   },
 
-  jumpAuthor:function(){
-    wx.navigateTo({
-      url:"../author/author"
-    })
-  },
-  
   jumpBook:function(e){
     var index = e.target.dataset.index
     console.log(e)
-    console.log(this.data.recommendBookArray)
     wx.navigateTo({
       url: "../book/book?id=" + this.data.recommendBookArray[index].recommendBookId
     })
@@ -104,27 +96,53 @@ Page({
   },
 
   setlike:function(e){
+    var that = this
     var index = e.target.dataset.index
     var param = "recommendBookArray[" + index + "].likeStatus"
-    wx.showToast({
-      title: '已喜欢本书',
-      duration: 1500
-    }),
-    
-    this.setData({
-      [param]: true
+    var api = "/users/" + app.globalData.userId + "/collection"
+    var params = {
+      'bookId': that.data.recommendBookArray[index].recommendBookId
+    }
+    http.POST(api, params, function (res) {
+      console.log(res)
+      wx.showToast({
+        title: '已喜欢本书',
+        duration: 1500
+      })
+      that.setData({
+        [param]: true
+      })
     })
   },
+
   setunlike: function (e) {
+    var that = this
     var index = e.target.dataset.index
+    var api = "/users/" + app.globalData.userId + "/collection?bookId=" + that.data.recommendBookArray[index].recommendBookId
     var param = "recommendBookArray[" + index + "].likeStatus"
-    wx.showToast({
-      title: '已取消喜欢本书',
-      duration: 1500
-    }),
-    this.setData({
-      [param]: false
+    var params = {
+    }
+    http.DELETE(api, params, function (res) {
+      if (res.data.message == "成功") {
+        wx.showToast({
+          title: '已取消喜欢本书',
+          duration: 1500
+        })
+        that.setData({
+          [param]: false
+        })
+      } else {
+        wx.showToast({
+          title: '失败',
+          duration: 1500
+        })
+      }
+
     })
+    
+    
   }
+
+  
 
 })
