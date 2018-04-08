@@ -12,7 +12,7 @@
       <view class='listicon'></view>
       <view class='container_2'>
         <view class='listname'>{{item.booklistName}}</view>
-        <view class='listinfo'>{{item.bookCount}}本书·被收藏{{item.starCount}}次</view>
+        <view class='listinfo'>{{item.bookCount}}本书</view>
       </view>
     </view>
   </view>

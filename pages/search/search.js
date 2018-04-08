@@ -71,7 +71,7 @@ Page({
   },
 
   jumpBook:function(e){
-    const index = e.target.dataset.index
+    const index = e.currentTarget.dataset.index
     console.log(index)
     wx.navigateTo({
       url: '../book/book?id=' + this.data.BookArray[index].BookId

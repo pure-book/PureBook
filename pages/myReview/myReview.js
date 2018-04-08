@@ -52,7 +52,7 @@ Page({
   },
   
   gotoreview: function (e){
-    var index = e.target.dataset.index
+    var index = e.currentTarget.dataset.index
     wx.navigateTo({
       url: '../reviewDetail/reviewDetail?id=' + this.data.reviewArray[index].reviewId+'&bookName='+this.data.reviewArray[index].reviewBook+'&bookAuthor='+this.data.reviewArray[index].bookAuthor,
     })

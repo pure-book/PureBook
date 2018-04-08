@@ -14,7 +14,7 @@ Page({
   },
 
   jumpBook: function (e) {
-    var index = e.target.dataset.index
+    var index = e.currentTarget.dataset.index
     wx.navigateTo({
       url: '../book/book?id=' + this.data.likeBookArray[index].bookId,
     })
@@ -34,12 +34,11 @@ Page({
     }
     http.GET(api, params, function (res) {
       const data = res.data.data
+      console.log(data)
       for (var i = 0; i < data.length; i++) {
         const param1 = "likeBookArray[" + i + "].bookName"
         const param2 = "likeBookArray[" + i + "].bookAuthor"
         const param3 = "likeBookArray[" + i + "].bookId"
-
-
         that.setData({
           [param1]: data[i].name,
           [param2]:data[i].author,

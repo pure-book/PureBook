@@ -106,7 +106,7 @@ Page({
   },
 
   jumpReview:function(e){
-    var index = e.target.dataset.index
+    var index = e.currentTarget.dataset.index
     wx.navigateTo({
       url: '../reviewDetail/reviewDetail?id=' + this.data.bookReviewArray[index].bookReviewId+'&bookName='+this.data.bookInfo.bookTitle+'&bookAuthor='+this.data.bookInfo.bookAuthor
     })

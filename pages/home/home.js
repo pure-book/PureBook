@@ -14,14 +14,8 @@ Page({
       likeStatus: false
     }],
     recommendBooklistArray:[{
-      recommendBooklistTitle:"艺术，音乐与文学鉴赏",
+      recommendBooklistTitle:"",
       recommendBooklistId:0
-    },{
-      recommendBooklistTitle: "关于程序员的自我修养",
-      recommendBooklistId: 0
-    },{
-      recommendBooklistTitle: "轻小说合集",
-      recommendBooklistId: 0
     }],
     
     haveRead:0
@@ -30,12 +24,13 @@ Page({
   onLoad:function(){
     var that = this
     var api1 = "/users/" + app.globalData.userId + "/recommand"
+    var api2 = "/users/" + app.globalData.userId + "/recommandbooklist"
     var api3 = "/users/" + app.globalData.userId + "/relation"
     var params1={}
+    var params2 = {}
     http.GET(api1,params1,function(res){
-      const data = res.data.data
-      console.log(data)
-      for(let i = 0;i< data.length;i++){
+      const data1 = res.data.data
+      for(let i = 0;i< data1.length;i++){
         const param1 = "recommendBookArray[" + i + "].recommendBookTitle"
         const param2 = "recommendBookArray[" + i + "].recommendBookDescription"
         const param3 = "recommendBookArray[" + i + "].recommendBookCover"
@@ -44,13 +39,13 @@ Page({
         const param6 = "recommendBookArray["+i+"].recommendBookId"
         const param7 = "recommendBookArray["+i+"].likeStatus"
         that.setData({
-          [param1]:data[i].name,
-          [param2]:data[i].intro.slice(0,46)+"...",
-          [param3]:data[i].cover,
-          [param5]:data[i].author,
-          [param6]:data[i].id
+          [param1]:data1[i].name,
+          [param2]:data1[i].intro.slice(0,46)+"...",
+          [param3]:data1[i].cover,
+          [param5]:data1[i].author,
+          [param6]:data1[i].id
         })
-        var params3 = {'bookId':data[i].id}
+        var params3 = {'bookId':data1[i].id}
         http.GET(api3, params3, function(res) {
           if (res.data.message == "成功") {
             that.setData({
@@ -65,25 +60,25 @@ Page({
       }
     })
 
-    /*var api2 = "/users/" + app.globalData.userId + "/recommendation"
-    var params2={}
     http.GET(api2,params2,function(res){
-      const data = res.data.data
-      for(let j=0;j<data.length;j++){
-        const param1 = "recommendBooklistArray["+i+"].recommendBooklistTitle"
-        const param2 = "recommendBooklistArray["+i+"].recommendBooklistId"
+      const data2 = res.data.data
+      console.log(data2)
+      for(let j=0;j<data2.length;j++){
+        const param8 = "recommendBooklistArray["+j+"].recommendBooklistTitle"
+        const param9 = "recommendBooklistArray["+j+"].recommendBooklistId"
+        that.setData({
+          [param8]: data2[j].name,
+          [param9]: data2[j].id
+        })
       }
-      that.setData({
-
-      })
-    })*/
+      
+    })
 
   },
 
   jumpBook:function(e){
     var that = this
-    var index = e.target.dataset.index
-    console.log(index)
+    var index = e.currentTarget.dataset.index
     wx.navigateTo({
       url: "../book/book?id=" + that.data.recommendBookArray[index].recommendBookId
     })
@@ -91,7 +86,7 @@ Page({
 
   jumpBooklist:function(e){
     var that = this
-    var index = e.target.dataset.index
+    var index = e.currentTarget.dataset.index
     console.log(index)
     wx.navigateTo({
       url: '../booklist/booklist?id=' + that.data.recommendBooklistArray[index].recommendBooklistId + '&name=' + that.data.recommendBooklistArray[index].recommendBooklistTitle
@@ -100,7 +95,7 @@ Page({
 
   setlike:function(e){
     var that = this
-    var index = e.target.dataset.index
+    var index = e.currentTarget.dataset.index
     var param = "recommendBookArray[" + index + "].likeStatus"
     var api = "/users/" + app.globalData.userId + "/collection"
     var params = {
@@ -120,7 +115,7 @@ Page({
 
   setunlike: function (e) {
     var that = this
-    var index = e.target.dataset.index
+    var index = e.currentTarget.dataset.index
     var api = "/users/" + app.globalData.userId + "/collection?bookId=" + that.data.recommendBookArray[index].recommendBookId
     var param = "recommendBookArray[" + index + "].likeStatus"
     var params = {

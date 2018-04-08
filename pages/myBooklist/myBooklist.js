@@ -7,7 +7,6 @@ Page({
     booklistArray:[{
       booklistName:"",
       bookCount:0,
-      starCount:0,
       booklistId:0,
       authorId:""
     }]
@@ -25,7 +24,7 @@ Page({
     var params = {}
     http.GET(api, params, function (res) {
       console.log(res.data.data)
-      for (var i = 0; i < res.data.data.length; i++) {
+      for (let i = 0; i < res.data.data.length; i++) {
         var param1 = "booklistArray[" + i + "].booklistName"
         var param2 = "booklistArray[" + i + "].bookCount"
         var param3 = "booklistArray[" + i + "].starCount"
@@ -33,6 +32,7 @@ Page({
         var param5 = "booklistArray[" + i + "].booklistId"
         that.setData({
           [param1]:res.data.data[i].name,
+          [param2]:res.data.data.length,
           [param4]:res.data.data[i].userId,
           [param5]:res.data.data[i].id
         })
@@ -41,7 +41,7 @@ Page({
   },
 
   jumpBooklist:function(e){
-    var index = e.target.dataset.index
+    var index = e.currentTarget.dataset.index
     wx.navigateTo({
       url: '../booklist/booklist?id='+this.data.booklistArray[index].booklistId
       +'&name='+this.data.booklistArray[index].booklistName
