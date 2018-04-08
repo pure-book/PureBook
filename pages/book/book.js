@@ -45,7 +45,6 @@ Page({
       'bookId': options.id
     }
     http.GET(api2, params2, function (res) {
-      console.log(res)
       if(res.data.message=="成功"){
         that.setData({
           likeStatus:true
@@ -62,13 +61,21 @@ Page({
     var params3 = {}
     http.GET(api3, params3, function (res) {
       const data = res.data.data
-      console.log(data)
       for (var i = 0; i < 4; i++) {
         const param1 = "bookInfo.bookTagArray[" + i + "].bookTag"       
         that.setData({
           [param1]: data[i].field,
         })
       }
+    })
+
+    var api4 = "/books/" + options.id + "/excerpt"
+    var params4 = {}
+    http.GET(api4, params4, function (res) {
+      const data = res.data.data
+      that.setData({
+        'bookInfo.bookSentence': data[0].content.slice(0, 41) + "..."
+      })
     })
     
   },
@@ -112,10 +119,13 @@ Page({
           duration: 1500
         })
       }
-      
     })
-    
-      
+  },
+
+  jumpAuthor:function(){
+    wx.navigateTo({
+      url: '../author/author?name='+this.data.bookInfo.authorName,
+    })
   }
 
   

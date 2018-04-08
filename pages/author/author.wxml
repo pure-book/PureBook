@@ -12,7 +12,7 @@
  <view class="author-works-box">
   <text class="author-works-box-title">·作品一览·</text>
   <view class="author-works-box-content">
-    <view class="author-work" wx:for="{{authorWorkArray}}" bindtap='jumpBook'>
+    <view class="author-work" wx:for="{{authorWorkArray}}" bindtap='jumpBook' data-index="{{index}}">
       <text>{{item.authorWorkTitle}}</text>
     </view>
   

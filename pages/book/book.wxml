@@ -8,7 +8,7 @@
       </view>
       <text class = "book-title">{{bookInfo.bookTitle}}</text>
     </view>
-    <view class = "author-display-box">
+    <view class = "author-display-box" bindtap='jumpAuthor'>
       <image class = "author-avatar" src = "../../images/author-1.jpg"/>
       <text class = "author-name">{{bookInfo.authorName}}</text>
     </view>
