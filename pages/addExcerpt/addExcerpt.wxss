@@ -48,7 +48,10 @@
 .title{
   font-family: 'FZQingKeBenYueSongS-R-GB';
   color: #555555;
+  width: 100%;
+  height: 100%;
 }
+
 
 .addContent{
   margin-left: 40rpx;

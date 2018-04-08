@@ -4,9 +4,6 @@ var http = require('../../utils/httpUtil.js')
 
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
     BookArray: [{
       bookId: 0,
