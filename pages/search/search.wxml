@@ -4,9 +4,10 @@
 </view>
 <view class='title'>/ 热门书籍/</view>
   <view class='book'>
-    <view class='item' wx:for = "{{BookArray}}">
-      <image class='book_cover' src = "{{item.BookCover}}"></image>
+    <view class='item' wx:for = "{{BookArray}}" data-index="{{index}}" bindtap='jumpBook'>
+      <image class='book_cover' src = "{{item.BookCover}}" ></image>
       <text class='book_title'>{{item.BookTitle}}</text>
     </view>
   </view>
+
 

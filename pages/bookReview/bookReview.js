@@ -40,7 +40,7 @@ Page({
           [param1]: data[i].title,
           [param2]: data[i].userAvatar,
           [param3]: data[i].userName,
-          [param4]: data[i].review,
+          [param4]: data[i].review.slice(0,120)+"...",
           [param5]: data[i].id
         })
       }
@@ -79,7 +79,7 @@ Page({
           [param1]: data[i].title,
           [param2]: data[i].userAvatar,
           [param3]: data[i].userName,
-          [param4]:data[i].review,
+          [param4]: data[i].review.slice(0, 120) + "...",
           [param5]:data[i].id
         })
       }
