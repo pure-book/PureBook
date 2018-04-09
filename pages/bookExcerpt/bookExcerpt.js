@@ -44,7 +44,7 @@ Page({
     http.GET(api1, params1, function (res) {
       const data = res.data.data
       console.log(data)
-      for(var i =0;i<data.length;i++){
+      for(let i =0;i<data.length;i++){
         const param1 = "bookExcerptArray[" + i + "].excerptContent"
         that.setData({
           [param1]:data[i].content

@@ -1,7 +1,6 @@
 const app = getApp()
 var http = require('../../utils/httpUtil.js')
 
-
 Page({
   data:{
     recommendBookArray:[{
@@ -18,7 +17,7 @@ Page({
       recommendBooklistId:0
     }],
     
-    haveRead:0
+    haveRead:0,
   },
   
   onLoad:function(){
@@ -26,22 +25,26 @@ Page({
     var api1 = "/users/" + app.globalData.userId + "/recommand"
     var api2 = "/users/" + app.globalData.userId + "/recommandbooklist"
     var api3 = "/users/" + app.globalData.userId + "/relation"
-    var params1={}
+    var params1 = {}
     var params2 = {}
     http.GET(api1,params1,function(res){
       const data1 = res.data.data
+      that.setData({
+        haveRead:data1.length
+      })
       for(let i = 0;i< data1.length;i++){
         const param1 = "recommendBookArray[" + i + "].recommendBookTitle"
         const param2 = "recommendBookArray[" + i + "].recommendBookDescription"
         const param3 = "recommendBookArray[" + i + "].recommendBookCover"
         const param4 = "recommendBookArray[" + i + "].recommendBookAuthorAvatar"
         const param5 = "recommendBookArray[" + i + "].recommendBookAuthorName"
-        const param6 = "recommendBookArray["+i+"].recommendBookId"
-        const param7 = "recommendBookArray["+i+"].likeStatus"
+        const param6 = "recommendBookArray[" + i + "].recommendBookId"
+        const param7 = "recommendBookArray[" + i + "].likeStatus"
         that.setData({
           [param1]:data1[i].name,
           [param2]:data1[i].intro.slice(0,46)+"...",
           [param3]:data1[i].cover,
+          [param4]: "../../images/author-1.jpg",
           [param5]:data1[i].author,
           [param6]:data1[i].id
         })
@@ -50,7 +53,7 @@ Page({
           if (res.data.message == "成功") {
             that.setData({
               [param7]: true
-            })
+          })
           } else {
             that.setData({
               [param7]: false
@@ -62,7 +65,6 @@ Page({
 
     http.GET(api2,params2,function(res){
       const data2 = res.data.data
-      console.log(data2)
       for(let j=0;j<data2.length;j++){
         const param8 = "recommendBooklistArray["+j+"].recommendBooklistTitle"
         const param9 = "recommendBooklistArray["+j+"].recommendBooklistId"

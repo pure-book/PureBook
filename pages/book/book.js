@@ -6,7 +6,7 @@ Page({
   data:{
     bookInfo:{
       bookId:0,
-      bookSentence: "人害怕寂寞，害怕到无耻的程度。换言之，人的某些无耻行径是由于害怕寂寞而做出来的。",
+      bookSentence: "",
       bookCover:"",
       bookTitle:"",
       authorName:"",
@@ -73,9 +73,11 @@ Page({
     var params4 = {}
     http.GET(api4, params4, function (res) {
       const data = res.data.data
-      that.setData({
-        'bookInfo.bookSentence': data[0].content.slice(0, 41) + "..."
-      })
+      if(data.length!=0){
+        that.setData({
+          'bookInfo.bookSentence': data[0].content.slice(0, 41) + "..."
+        })
+      }    
     })
     
   },

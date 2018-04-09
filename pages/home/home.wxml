@@ -1,7 +1,7 @@
 <!--home.wxml-->
 <view>
   <view class = "have-read-box">
-    <text>您在PureBook已读过</text>
+    <text>您在PureBook已收藏过</text>
     <view class = "have-read-calculator-box">
       <text class = "have-read-calculator">{{haveRead}}</text>
       <text>本书</text>

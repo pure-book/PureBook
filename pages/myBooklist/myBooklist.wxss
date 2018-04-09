@@ -49,8 +49,8 @@
 .listicon{
   width: 100rpx;
   height: 100rpx;
-  border: 2rpx solid gray;
-  border-radius: 5rpx;
+  background-color:#b3c3da;
+  border-radius: 5%;
 }
 
 
