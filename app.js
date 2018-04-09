@@ -28,9 +28,10 @@ App({
                 //判断是否解密成功
                 success:function(data){
                   if(data.data.status==1){
-                    var userInfo_ = data.data.userInfo
+                    let userInfo_ = data.data.userInfo
                     id = userInfo_.openId
                     that.globalData.userId = id
+                    console.log(that.globalData.userId)
                   }else{
                     console.log("解密失败")
                   }

@@ -23,6 +23,7 @@ Page({
   onLoad:function(){
     var that = this
     var api1 = "/users/" + app.globalData.userId + "/recommand"
+    console.log(api1)
     var api2 = "/users/" + app.globalData.userId + "/recommandbooklist"
     var api3 = "/users/" + app.globalData.userId + "/relation"
     var params1 = {}
