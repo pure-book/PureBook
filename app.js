@@ -32,7 +32,7 @@ App({
                                     }
                                 },
                                 fail: function() {
-                                    console.log("系统错误")
+                                    console.log("系统错误");
                                 }
                             })
                         },
