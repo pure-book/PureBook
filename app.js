@@ -30,7 +30,6 @@ App({
                                     } else {
                                         console.log("解密失败");
                                     }
-
                                 },
                                 fail: function() {
                                     console.log("系统错误")
