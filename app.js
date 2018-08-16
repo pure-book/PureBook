@@ -3,7 +3,7 @@ App({
         var logs = wx.getStorageSync('logs') || []
         logs.unshift(Date.now())
         wx.setStorageSync('logs', logs)
-        var id = ""
+        let id = ""
         wx.login({
             success: function(r) {
                 var code = r.code
