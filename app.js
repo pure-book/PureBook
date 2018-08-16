@@ -28,7 +28,7 @@ App({
                                         that.globalData.userId = id
                                         console.log(that.globalData.userId)
                                     } else {
-                                        console.log("解密失败")
+                                        console.log("解密失败");
                                     }
 
                                 },
