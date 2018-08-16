@@ -41,7 +41,7 @@ App({
                         }
                     })
                 } else {
-                    console.log("获取用户登录状态失败" + r.errMsg)
+                    console.log("获取用户登录状态失败" + r.errMsg);
                 }
 
                 // 发送 res.code 到后台换取 openId, sessionKey, unionId
