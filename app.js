@@ -37,7 +37,7 @@ App({
                             })
                         },
                         fail: function(res) {
-                            console.log("获取用户信息失败" + res.errMsg)
+                            console.log("获取用户信息失败" + res.errMsg);
                         }
                     })
                 } else {
