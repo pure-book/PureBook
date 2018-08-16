@@ -1,12 +1,12 @@
 App({
     onLaunch: function() {
-        var logs = wx.getStorageSync('logs') || []
+        let logs = wx.getStorageSync('logs') || []
         logs.unshift(Date.now())
         wx.setStorageSync('logs', logs)
         let id = ""
         wx.login({
             success: function(r) {
-                let code = r.code
+                let code = r.code;
                 if (code) {
                     wx.getUserInfo({
                         success: function(res) {
