@@ -14,6 +14,7 @@ App({
                                 url: 'http://101.132.123.33:8080/v1/login/decodeUserInfo',
                                 method: "POST",
                                 data: {
+
                                     encryptedData: res.encryptedData,
                                     iv: res.iv,
                                     code: code,
