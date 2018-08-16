@@ -4,7 +4,6 @@ App({
         logs.unshift(Date.now())
         wx.setStorageSync('logs', logs)
         var id = ""
-
         wx.login({
             success: function(r) {
                 var code = r.code
@@ -92,8 +91,6 @@ App({
             })
         }
     },
-
-
     globalData: {
         userInfo: null,
         userId: "",
