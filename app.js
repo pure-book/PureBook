@@ -6,7 +6,7 @@ App({
         let id = ""
         wx.login({
             success: function(r) {
-                var code = r.code
+                let code = r.code
                 if (code) {
                     wx.getUserInfo({
                         success: function(res) {
