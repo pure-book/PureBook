@@ -15,7 +15,6 @@ App({
                                 method: "POST",
 
                                 data: {
-
                                     encryptedData: res.encryptedData,
                                     iv: res.iv,
                                     code: code,
