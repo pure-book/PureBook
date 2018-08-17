@@ -23,14 +23,14 @@ App({
                                 //判断是否解密成功
                                 success: function(data) {
                                     if (data.data.status == 1) {
-                                        let userInfo_ = data.data.userInfo
-                                        id = userInfo_.openId
-                                        that.globalData.userId = id
-                                        console.log(that.globalData.userId)
+                                        let userInfo_ = data.data.userInfo;
+
+                                        id = userInfo_.openId;
+                                        that.globalData.userId = id;
+                                        console.log(that.globalData.userId);
                                     } else {
                                         console.log("解密失败");
                                     }
-
                                 },
                                 fail: function() {
                                     console.log("系统错误")
@@ -38,11 +38,11 @@ App({
                             })
                         },
                         fail: function(res) {
-                            console.log("获取用户信息失败" + res.errMsg)
+                            console.log("获取用户信息失败" + res.errMsg);
                         }
                     })
                 } else {
-                    console.log("获取用户登录状态失败" + r.errMsg)
+                    console.log("获取用户登录状态失败" + r.errMsg);
                 }
 
                 // 发送 res.code 到后台换取 openId, sessionKey, unionId
@@ -60,7 +60,7 @@ App({
                     wx.getUserInfo({
                         success: res => {
                             // 可以将 res 发送给后台解码出 unionId
-                            that.globalData.userInfo = res.userInfo
+                            that.globalData.userInfo = res.userInfo;
 
                             // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
                             // 所以此处加入 callback 以防止这种情况
