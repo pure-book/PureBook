@@ -91,6 +91,7 @@ App({
             })
         }
     },
+
     globalData: {
         userInfo: null,
         userId: "",
