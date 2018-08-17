@@ -24,6 +24,7 @@ App({
                                 success: function(data) {
                                     if (data.data.status == 1) {
                                         let userInfo_ = data.data.userInfo;
+
                                         id = userInfo_.openId;
                                         that.globalData.userId = id;
                                         console.log(that.globalData.userId);
