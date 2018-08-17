@@ -92,6 +92,7 @@ App({
         }
     },
     globalData: {
+
         userInfo: null,
         userId: "",
         currentBookId: 0
