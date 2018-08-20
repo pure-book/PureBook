@@ -73,6 +73,10 @@ App({
             }
         })
     },
+
+
+
+
     getUserInfo: function(cb) {
         var that = this
         if (this.globalData.userInfo) {
