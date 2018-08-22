@@ -20,6 +20,11 @@ function tabbarinit() {
             "iconPath": "../../images/Review.png",
             "selectedIconPath": "../../images/ReviewSelected.png",
             "text": "Review"
+
+
+
+
+
         },
     ]
 }
