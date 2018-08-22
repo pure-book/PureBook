@@ -13,6 +13,9 @@ function tabbarinit() {
             "selectedIconPath": "../../images/ExcerptSelected.png",
             "text": "Excerpt"
 
+
+
+
         },
         {
             "current": 0,
