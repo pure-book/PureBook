@@ -1,4 +1,9 @@
 function tabbarinit() {
+
+
+
+
+
     return [{
             "current": 0,
             "pagePath": "../../pages/book/book",
