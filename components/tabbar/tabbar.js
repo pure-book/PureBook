@@ -24,6 +24,13 @@ function tabbarinit() {
     ]
 }
 
+
+
+
+
+
+
+
 function tabbarmain(bindName = "tabdata", id, target) {
     var that = target;
     var bindData = {};
