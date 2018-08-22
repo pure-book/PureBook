@@ -11,6 +11,10 @@ function tabbarinit() {
             "pagePath": "../../pages/bookExcerpt/bookExcerpt",
             "iconPath": "../../images/Excerpt.png",
             "selectedIconPath": "../../images/ExcerptSelected.png",
+
+
+
+
             "text": "Excerpt"
 
         },
